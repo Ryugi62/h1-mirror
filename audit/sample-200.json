@@ -1,0 +1,1402 @@
+[
+ {
+  "id": 1,
+  "product": "Kefmax CV 50mg/31.25mg Syrup",
+  "composition": "Cefpodoxime Proxetil (50mg) + Clavulanic Acid (31.25mg)",
+  "pack": "bottle of 30 ml Syrup",
+  "bill_line": "Cefpodoxime Proxetil (50mg) + Clavulanic Acid (31.25mg)"
+ },
+ {
+  "id": 2,
+  "product": "Genorox 500mg Tablet",
+  "composition": "Cefuroxime (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefuroxime (500mg)"
+ },
+ {
+  "id": 3,
+  "product": "Oflowock 200mg Tablet",
+  "composition": "Ofloxacin (200mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ofloxacin (200mg)"
+ },
+ {
+  "id": 4,
+  "product": "Repodox 100mg Dry Syrup",
+  "composition": "Cefpodoxime Proxetil (100mg)",
+  "pack": "bottle of 30 ml Dry Syrup",
+  "bill_line": "Cefpodoxime Proxetil (100mg)"
+ },
+ {
+  "id": 5,
+  "product": "Cefzen 125mg Syrup",
+  "composition": "Cefadroxil (125mg)",
+  "pack": "bottle of 30 ml Syrup",
+  "bill_line": "Cefadroxil (125mg)"
+ },
+ {
+  "id": 6,
+  "product": "Ogi 400mg Tablet",
+  "composition": "Ofloxacin (400mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ofloxacin (400mg)"
+ },
+ {
+  "id": 7,
+  "product": "Delpoclav 228.5mg Tablet DT",
+  "composition": "Amoxycillin  (200mg) + Clavulanic Acid (28.5mg)",
+  "pack": "strip of 10 tablet dt",
+  "bill_line": "Amoxycillin  (200mg) + Clavulanic Acid (28.5mg)"
+ },
+ {
+  "id": 8,
+  "product": "Omnix XT Suspension",
+  "composition": "Cefixime (NA)",
+  "pack": "bottle of 150 ml Suspension",
+  "bill_line": "Cefixime (NA)"
+ },
+ {
+  "id": 9,
+  "product": "Licezon-TZ 1.125 Injection",
+  "composition": "Ceftriaxone (1000mg) + Tazobactum (125mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Ceftriaxone (1000mg) + Tazobactum (125mg) Injection"
+ },
+ {
+  "id": 10,
+  "product": "RD Mox CV 500mg/125mg Tablet",
+  "composition": "Amoxycillin (500mg) + Clavulanic Acid (125mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Amoxycillin (500mg) + Clavulanic Acid (125mg)"
+ },
+ {
+  "id": 11,
+  "product": "Zeloxa 50mg Suspension",
+  "composition": "Ofloxacin (50mg/5ml)",
+  "pack": "bottle of 60 ml Suspension",
+  "bill_line": "Ofloxacin (50mg/5ml)"
+ },
+ {
+  "id": 12,
+  "product": "Rapiclav L 500mg/125mg Tablet",
+  "composition": "Amoxycillin (500mg) + Clavulanic Acid (125mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Amoxycillin (500mg) + Clavulanic Acid (125mg)"
+ },
+ {
+  "id": 13,
+  "product": "Ofurox 500mg Tablet",
+  "composition": "Cefuroxime (500mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Cefuroxime (500mg)"
+ },
+ {
+  "id": 14,
+  "product": "Germox Kid 250mg Tablet",
+  "composition": "Amoxycillin (250mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Amoxycillin (250mg)"
+ },
+ {
+  "id": 15,
+  "product": "Tripod 200mg Dry Syrup",
+  "composition": "Cefpodoxime Proxetil (200mg)",
+  "pack": "bottle of 30 ml Dry Syrup",
+  "bill_line": "Cefpodoxime Proxetil (200mg)"
+ },
+ {
+  "id": 16,
+  "product": "Azidraw 500mg Tablet",
+  "composition": "Azithromycin (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Azithromycin (500mg)"
+ },
+ {
+  "id": 17,
+  "product": "Azirom 500mg Tablet",
+  "composition": "Azithromycin (500mg)",
+  "pack": "strip of 3 tablets",
+  "bill_line": "Azithromycin (500mg)"
+ },
+ {
+  "id": 18,
+  "product": "Meromex 1000mg Injection",
+  "composition": "Meropenem (1000mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Meropenem (1000mg) Injection"
+ },
+ {
+  "id": 19,
+  "product": "Roxim 500 Tablet",
+  "composition": "Cefuroxime (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefuroxime (500mg)"
+ },
+ {
+  "id": 20,
+  "product": "Sofa-LB 250 mg Tablet",
+  "composition": "Cefuroxime (250mg) + Lactobacillus (60Million spores)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefuroxime (250mg) + Lactobacillus (60Million spores)"
+ },
+ {
+  "id": 21,
+  "product": "Cefoze 500mg Tablet",
+  "composition": "Cefuroxime (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefuroxime (500mg)"
+ },
+ {
+  "id": 22,
+  "product": "Kindflox OZ Syrup",
+  "composition": "Ofloxacin (50mg) + Ornidazole (125mg)",
+  "pack": "bottle of 30 ml Syrup",
+  "bill_line": "Ofloxacin (50mg) + Ornidazole (125mg)"
+ },
+ {
+  "id": 23,
+  "product": "Zedoxil Suspension",
+  "composition": "Cefadroxil (250mg)",
+  "pack": "bottle of 30 ml Suspension",
+  "bill_line": "Cefadroxil (250mg)"
+ },
+ {
+  "id": 24,
+  "product": "Viltacef 250mg Tablet",
+  "composition": "Cefuroxime (250mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefuroxime (250mg)"
+ },
+ {
+  "id": 25,
+  "product": "Scoff OZ 200mg/500mg Tablet",
+  "composition": "Ofloxacin (200mg) + Ornidazole (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ofloxacin (200mg) + Ornidazole (500mg)"
+ },
+ {
+  "id": 26,
+  "product": "Mkcn 500mg Injection",
+  "composition": "Amikacin (500mg)",
+  "pack": "vial of 2 ml Injection",
+  "bill_line": "Amikacin (500mg) Injection"
+ },
+ {
+  "id": 27,
+  "product": "Himocin OZ 200 mg/500 mg Tablet",
+  "composition": "Ofloxacin (200mg) + Ornidazole (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ofloxacin (200mg) + Ornidazole (500mg)"
+ },
+ {
+  "id": 28,
+  "product": "Agumerz 1000mg/200mg Injection",
+  "composition": "Amoxycillin  (1000mg) + Clavulanic Acid (200mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Amoxycillin  (1000mg) + Clavulanic Acid (200mg) Injection"
+ },
+ {
+  "id": 29,
+  "product": "Tericef Mono 1000 mg/500 mg Injection",
+  "composition": "Ceftriaxone (1000mg) + Sulbactam (500mg)",
+  "pack": "vial of 1 ml Injection",
+  "bill_line": "Ceftriaxone (1000mg) + Sulbactam (500mg) Injection"
+ },
+ {
+  "id": 30,
+  "product": "Aroflox 200mg Tablet",
+  "composition": "Ofloxacin (200mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ofloxacin (200mg)"
+ },
+ {
+  "id": 31,
+  "product": "Levcon 500 Tablet",
+  "composition": "Levofloxacin (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Levofloxacin (500mg)"
+ },
+ {
+  "id": 32,
+  "product": "Viriflox-OZ Tablet",
+  "composition": "Ofloxacin (200mg) + Ornidazole (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ofloxacin (200mg) + Ornidazole (500mg)"
+ },
+ {
+  "id": 33,
+  "product": "Amexosyn 375 Tablet",
+  "composition": "Amoxycillin  (250mg) + Clavulanic Acid (125mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Amoxycillin  (250mg) + Clavulanic Acid (125mg)"
+ },
+ {
+  "id": 34,
+  "product": "C Let 500mg Injection",
+  "composition": "Ceftriaxone (500mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Ceftriaxone (500mg) Injection"
+ },
+ {
+  "id": 35,
+  "product": "Nuclav Dry Syrup",
+  "composition": "Amoxycillin  (200mg) + Clavulanic Acid (28.5mg)",
+  "pack": "bottle of 30 ml Dry Syrup",
+  "bill_line": "Amoxycillin  (200mg) + Clavulanic Acid (28.5mg)"
+ },
+ {
+  "id": 36,
+  "product": "Maczone 250mg Injection",
+  "composition": "Ceftriaxone (250mg)",
+  "pack": "vial of 5 ml Injection",
+  "bill_line": "Ceftriaxone (250mg) Injection"
+ },
+ {
+  "id": 37,
+  "product": "Eudoxime 200mg Tablet",
+  "composition": "Cefpodoxime Proxetil (200mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Cefpodoxime Proxetil (200mg)"
+ },
+ {
+  "id": 38,
+  "product": "Azist 250mg Tablet",
+  "composition": "Azithromycin (250mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Azithromycin (250mg)"
+ },
+ {
+  "id": 39,
+  "product": "Zinir LB Tablet DT",
+  "composition": "Cefdinir (100mg) + Lactobacillus (30Million Spores)",
+  "pack": "strip of 10 tablet dt",
+  "bill_line": "Cefdinir (100mg) + Lactobacillus (30Million Spores)"
+ },
+ {
+  "id": 40,
+  "product": "Faroza 200mg Tablet",
+  "composition": "Faropenem (200mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Faropenem (200mg)"
+ },
+ {
+  "id": 41,
+  "product": "Ojocef 500mg Injection",
+  "composition": "Ceftriaxone (500mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Ceftriaxone (500mg) Injection"
+ },
+ {
+  "id": 42,
+  "product": "Dorazi 250 Tablet",
+  "composition": "Azithromycin (250mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Azithromycin (250mg)"
+ },
+ {
+  "id": 43,
+  "product": "Sefdo 100mg Tablet",
+  "composition": "Cefpodoxime Proxetil (100mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefpodoxime Proxetil (100mg)"
+ },
+ {
+  "id": 44,
+  "product": "Trionix TZ 250mg/31.25mg Injection",
+  "composition": "Ceftriaxone (250mg) + Tazobactum (31.25mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Ceftriaxone (250mg) + Tazobactum (31.25mg) Injection"
+ },
+ {
+  "id": 45,
+  "product": "Adirox 150 Tablet",
+  "composition": "Roxithromycin (150mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Roxithromycin (150mg)"
+ },
+ {
+  "id": 46,
+  "product": "Strike 1000mg Injection",
+  "composition": "Meropenem (1000mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Meropenem (1000mg) Injection"
+ },
+ {
+  "id": 47,
+  "product": "Vexim 500mg Tablet",
+  "composition": "Cefuroxime (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefuroxime (500mg)"
+ },
+ {
+  "id": 48,
+  "product": "Zavikpod 50mg Dry Syrup",
+  "composition": "Cefpodoxime Proxetil (50mg)",
+  "pack": "bottle of 30 ml Dry Syrup",
+  "bill_line": "Cefpodoxime Proxetil (50mg)"
+ },
+ {
+  "id": 49,
+  "product": "Fodxi 200mg Tablet",
+  "composition": "Cefpodoxime Proxetil (200mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefpodoxime Proxetil (200mg)"
+ },
+ {
+  "id": 50,
+  "product": "Xitoclar 500 Tablet",
+  "composition": "Clarithromycin (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Clarithromycin (500mg)"
+ },
+ {
+  "id": 51,
+  "product": "Ampiod-CV Dry Syrup",
+  "composition": "Cefpodoxime Proxetil (50mg) + Clavulanic Acid (125mg)",
+  "pack": "bottle of 30 ml Oral Suspension",
+  "bill_line": "Cefpodoxime Proxetil (50mg) + Clavulanic Acid (125mg)"
+ },
+ {
+  "id": 52,
+  "product": "Cefazcin 50mg Dry Syrup",
+  "composition": "Cefixime (50mg)",
+  "pack": "bottle of 30 ml Dry Syrup",
+  "bill_line": "Cefixime (50mg)"
+ },
+ {
+  "id": 53,
+  "product": "Zirocin 200mg Syrup",
+  "composition": "Azithromycin (200mg)",
+  "pack": "bottle of 15 ml Syrup",
+  "bill_line": "Azithromycin (200mg)"
+ },
+ {
+  "id": 54,
+  "product": "Azital 500mg Tablet",
+  "composition": "Azithromycin (500mg)",
+  "pack": "strip of 3 tablets",
+  "bill_line": "Azithromycin (500mg)"
+ },
+ {
+  "id": 55,
+  "product": "Levofact 250 Tablet",
+  "composition": "Levofloxacin (250mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Levofloxacin (250mg)"
+ },
+ {
+  "id": 56,
+  "product": "Clamod A 500mg/125mg Tablet",
+  "composition": "Amoxycillin (500mg) + Clavulanic Acid (125mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Amoxycillin (500mg) + Clavulanic Acid (125mg)"
+ },
+ {
+  "id": 57,
+  "product": "Ivmicin 500mg Injection",
+  "composition": "Amikacin (500mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Amikacin (500mg) Injection"
+ },
+ {
+  "id": 58,
+  "product": "V-Clam-Duo 375mg Tablet",
+  "composition": "Amoxycillin  (250mg) + Clavulanic Acid (125mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Amoxycillin  (250mg) + Clavulanic Acid (125mg)"
+ },
+ {
+  "id": 59,
+  "product": "Locorex 1000mg Injection",
+  "composition": "Ceftriaxone (1000mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Ceftriaxone (1000mg) Injection"
+ },
+ {
+  "id": 60,
+  "product": "Salvacin OZ 250mg/500mg Tablet",
+  "composition": "Levofloxacin (250mg) + Ornidazole (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Levofloxacin (250mg) + Ornidazole (500mg)"
+ },
+ {
+  "id": 61,
+  "product": "Mlevo 125mg Suspension",
+  "composition": "Levofloxacin (125mg)",
+  "pack": "bottle of 60 ml Suspension",
+  "bill_line": "Levofloxacin (125mg)"
+ },
+ {
+  "id": 62,
+  "product": "Astrocef 100mg Tablet DT",
+  "composition": "Cefixime (100mg)",
+  "pack": "strip of 10 tablet dt",
+  "bill_line": "Cefixime (100mg)"
+ },
+ {
+  "id": 63,
+  "product": "Cefaxil 125mg Syrup",
+  "composition": "Cefuroxime (125mg)",
+  "pack": "bottle of 30 ml Syrup",
+  "bill_line": "Cefuroxime (125mg)"
+ },
+ {
+  "id": 64,
+  "product": "Ramixim LB 100mg Tablet",
+  "composition": "Cefixime (100mg) + Lactobacillus (40Million spores)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefixime (100mg) + Lactobacillus (40Million spores)"
+ },
+ {
+  "id": 65,
+  "product": "Shipip-T Injection",
+  "composition": "Piperacillin (4000mg) + Tazobactum (500mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Piperacillin (4000mg) + Tazobactum (500mg) Injection"
+ },
+ {
+  "id": 66,
+  "product": "Nisrox Tablet",
+  "composition": "Roxithromycin (NA)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Roxithromycin (NA)"
+ },
+ {
+  "id": 67,
+  "product": "Maxicef 1000mg Injection",
+  "composition": "Cefepime (1000mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Cefepime (1000mg) Injection"
+ },
+ {
+  "id": 68,
+  "product": "Ropoclav 625 Tablet",
+  "composition": "Amoxycillin  (500mg) + Clavulanic Acid (125mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Amoxycillin  (500mg) + Clavulanic Acid (125mg)"
+ },
+ {
+  "id": 69,
+  "product": "Cfc 500mg Tablet",
+  "composition": "Ciprofloxacin (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ciprofloxacin (500mg)"
+ },
+ {
+  "id": 70,
+  "product": "Wonlev 500mg Tablet",
+  "composition": "Levofloxacin (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Levofloxacin (500mg)"
+ },
+ {
+  "id": 71,
+  "product": "Ceeflox 50mg Oral Suspension",
+  "composition": "Ofloxacin (50mg)",
+  "pack": "bottle of 30 ml Oral Suspension",
+  "bill_line": "Ofloxacin (50mg)"
+ },
+ {
+  "id": 72,
+  "product": "Siprax 200mg Tablet DT",
+  "composition": "Cefixime (200mg)",
+  "pack": "strip of 10 tablet dt",
+  "bill_line": "Cefixime (200mg)"
+ },
+ {
+  "id": 73,
+  "product": "Erzid 1000mg Injection",
+  "composition": "Ceftazidime (1000mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Ceftazidime (1000mg) Injection"
+ },
+ {
+  "id": 74,
+  "product": "Supricef 250mg Tablet",
+  "composition": "Cefuroxime (250mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefuroxime (250mg)"
+ },
+ {
+  "id": 75,
+  "product": "Moxidas-CV  Tablet",
+  "composition": "Amoxycillin  (500mg) + Clavulanic Acid (125mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Amoxycillin  (500mg) + Clavulanic Acid (125mg)"
+ },
+ {
+  "id": 76,
+  "product": "Grewia 100mg Tablet",
+  "composition": "Cefixime (100mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefixime (100mg)"
+ },
+ {
+  "id": 77,
+  "product": "Mahacef 100mg Tablet",
+  "composition": "Cefixime (100mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefixime (100mg)"
+ },
+ {
+  "id": 78,
+  "product": "Cefnic 100mg Dry Syrup",
+  "composition": "Cefixime (100mg)",
+  "pack": "bottle of 30 ml Dry Syrup",
+  "bill_line": "Cefixime (100mg)"
+ },
+ {
+  "id": 79,
+  "product": "Bouncef-O Tablet",
+  "composition": "Cefixime (200mg) + Ofloxacin (200mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefixime (200mg) + Ofloxacin (200mg)"
+ },
+ {
+  "id": 80,
+  "product": "Runthro 250mg Tablet",
+  "composition": "Azithromycin (250mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Azithromycin (250mg)"
+ },
+ {
+  "id": 81,
+  "product": "Cefrorix 500mg Tablet",
+  "composition": "Cefuroxime (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefuroxime (500mg)"
+ },
+ {
+  "id": 82,
+  "product": "Zifpod CV 200mg/125mg Tablet",
+  "composition": "Cefpodoxime Proxetil (200mg) + Clavulanic Acid (125mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefpodoxime Proxetil (200mg) + Clavulanic Acid (125mg)"
+ },
+ {
+  "id": 83,
+  "product": "Azisung 500 Tablet",
+  "composition": "Azithromycin (500mg)",
+  "pack": "strip of 3 tablets",
+  "bill_line": "Azithromycin (500mg)"
+ },
+ {
+  "id": 84,
+  "product": "Uflox OZ 200mg/500mg Tablet",
+  "composition": "Ofloxacin (200mg) + Ornidazole (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ofloxacin (200mg) + Ornidazole (500mg)"
+ },
+ {
+  "id": 85,
+  "product": "Fybactam 4000mg/500mg Injection",
+  "composition": "Piperacillin (4000mg) + Tazobactum (500mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Piperacillin (4000mg) + Tazobactum (500mg) Injection"
+ },
+ {
+  "id": 86,
+  "product": "Alcephin 250mg Capsule",
+  "composition": "Cefalexin (250mg)",
+  "pack": "strip of 10 capsules",
+  "bill_line": "Cefalexin (250mg)"
+ },
+ {
+  "id": 87,
+  "product": "Levomine 500mg Tablet",
+  "composition": "Levofloxacin (500mg)",
+  "pack": "strip of 5 tablets",
+  "bill_line": "Levofloxacin (500mg)"
+ },
+ {
+  "id": 88,
+  "product": "Orger 200mg Tablet",
+  "composition": "Gatifloxacin (200mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Gatifloxacin (200mg)"
+ },
+ {
+  "id": 89,
+  "product": "Ofran 500mg Tablet",
+  "composition": "Ciprofloxacin (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ciprofloxacin (500mg)"
+ },
+ {
+  "id": 90,
+  "product": "Moxpin CV Dry Syrup",
+  "composition": "Amoxycillin  (200mg) + Clavulanic Acid (28.5mg)",
+  "pack": "bottle of 30 ml Dry Syrup",
+  "bill_line": "Amoxycillin  (200mg) + Clavulanic Acid (28.5mg)"
+ },
+ {
+  "id": 91,
+  "product": "Moxzit 625 LB Tablet",
+  "composition": "Amoxycillin (500mg) + Clavulanic Acid (125mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Amoxycillin (500mg) + Clavulanic Acid (125mg)"
+ },
+ {
+  "id": 92,
+  "product": "Ceforit-O Tablet DT",
+  "composition": "Cefpodoxime Proxetil (200mg)",
+  "pack": "strip of 10 tablet dt",
+  "bill_line": "Cefpodoxime Proxetil (200mg)"
+ },
+ {
+  "id": 93,
+  "product": "Ciproxain 250mg Tablet",
+  "composition": "Ciprofloxacin (250mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ciprofloxacin (250mg)"
+ },
+ {
+  "id": 94,
+  "product": "Quiz 500mg Tablet",
+  "composition": "Azithromycin (500mg)",
+  "pack": "strip of 3 tablets",
+  "bill_line": "Azithromycin (500mg)"
+ },
+ {
+  "id": 95,
+  "product": "Azin CX 200mg/250mg Tablet",
+  "composition": "Cefixime (200mg) + Azithromycin (250mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefixime (200mg) + Azithromycin (250mg)"
+ },
+ {
+  "id": 96,
+  "product": "Macmika 500mg Injection",
+  "composition": "Amikacin (500mg)",
+  "pack": "vial of 2 ml Injection",
+  "bill_line": "Amikacin (500mg) Injection"
+ },
+ {
+  "id": 97,
+  "product": "Deltaflox 100mg Tablet DT",
+  "composition": "Ofloxacin (100mg)",
+  "pack": "strip of 10 tablet dt",
+  "bill_line": "Ofloxacin (100mg)"
+ },
+ {
+  "id": 98,
+  "product": "Volfix 50mg Dry Syrup",
+  "composition": "Cefixime (50mg)",
+  "pack": "bottle of 30 ml Dry Syrup",
+  "bill_line": "Cefixime (50mg)"
+ },
+ {
+  "id": 99,
+  "product": "Raze-S 1gm Injection",
+  "composition": "Cefoperazone (500mg) + Sulbactam (500mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Cefoperazone (500mg) + Sulbactam (500mg) Injection"
+ },
+ {
+  "id": 100,
+  "product": "Citoz 500mg Tablet",
+  "composition": "Ciprofloxacin (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ciprofloxacin (500mg)"
+ },
+ {
+  "id": 101,
+  "product": "Elmox 125mg Tablet",
+  "composition": "Amoxycillin (125mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Amoxycillin (125mg)"
+ },
+ {
+  "id": 102,
+  "product": "O Mile Syrup",
+  "composition": "Cefixime (50mg/5ml)",
+  "pack": "bottle of 30 ml Syrup",
+  "bill_line": "Cefixime (50mg/5ml)"
+ },
+ {
+  "id": 103,
+  "product": "Ceftina 250mg Injection",
+  "composition": "Ceftriaxone (250mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Ceftriaxone (250mg) Injection"
+ },
+ {
+  "id": 104,
+  "product": "Ellixime 50 Dry Syrup",
+  "composition": "Cefixime (50mg)",
+  "pack": "bottle of 30 ml Oral Suspension",
+  "bill_line": "Cefixime (50mg)"
+ },
+ {
+  "id": 105,
+  "product": "Zwitermox 250mg Capsule",
+  "composition": "Amoxycillin (250mg)",
+  "pack": "strip of 10 capsules",
+  "bill_line": "Amoxycillin (250mg)"
+ },
+ {
+  "id": 106,
+  "product": "Cipotoz 200mg Tablet DT",
+  "composition": "Cefpodoxime Proxetil (200mg)",
+  "pack": "strip of 10 tablet dt",
+  "bill_line": "Cefpodoxime Proxetil (200mg)"
+ },
+ {
+  "id": 107,
+  "product": "Azlay 500 Tablet",
+  "composition": "Azithromycin (500mg)",
+  "pack": "strip of 3 tablets",
+  "bill_line": "Azithromycin (500mg)"
+ },
+ {
+  "id": 108,
+  "product": "Baroxime CV 50 mg/31.25 mg Dry Syrup",
+  "composition": "Cefpodoxime Proxetil (50mg) + Clavulanic Acid (31.25mg)",
+  "pack": "bottle of 30 ml Dry Syrup",
+  "bill_line": "Cefpodoxime Proxetil (50mg) + Clavulanic Acid (31.25mg)"
+ },
+ {
+  "id": 109,
+  "product": "E-Fact 100 DT Tablet",
+  "composition": "Cefpodoxime Proxetil (100mg)",
+  "pack": "strip of 10 tablet dt",
+  "bill_line": "Cefpodoxime Proxetil (100mg)"
+ },
+ {
+  "id": 110,
+  "product": "Uvex OZ 250 mg/500 mg Tablet",
+  "composition": "Levofloxacin (250mg) + Ornidazole (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Levofloxacin (250mg) + Ornidazole (500mg)"
+ },
+ {
+  "id": 111,
+  "product": "Nimcef 50mg Tablet DT",
+  "composition": "Cefixime (50mg)",
+  "pack": "strip of 10 tablet dt",
+  "bill_line": "Cefixime (50mg)"
+ },
+ {
+  "id": 112,
+  "product": "Cefyzone S 1000mg/500mg Injection",
+  "composition": "Cefoperazone (1000mg) + Sulbactam (500mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Cefoperazone (1000mg) + Sulbactam (500mg) Injection"
+ },
+ {
+  "id": 113,
+  "product": "Hapfix 50mg Dry Syrup",
+  "composition": "Cefixime (50mg/5ml)",
+  "pack": "bottle of 30 ml Dry Syrup",
+  "bill_line": "Cefixime (50mg/5ml)"
+ },
+ {
+  "id": 114,
+  "product": "Tallymox CV 500mg/125mg Tablet",
+  "composition": "Amoxycillin  (500mg) + Clavulanic Acid (125mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Amoxycillin  (500mg) + Clavulanic Acid (125mg)"
+ },
+ {
+  "id": 115,
+  "product": "Jetmox 125mg Dry Syrup",
+  "composition": "Amoxycillin (125mg)",
+  "pack": "bottle of 60 ml Dry Syrup",
+  "bill_line": "Amoxycillin (125mg)"
+ },
+ {
+  "id": 116,
+  "product": "Tetramax 500 Capsule",
+  "composition": "Tetracycline (500mg)",
+  "pack": "strip of 10 capsules",
+  "bill_line": "Tetracycline (500mg)"
+ },
+ {
+  "id": 117,
+  "product": "Cefimak 100mg Dry Syrup",
+  "composition": "Cefixime (100mg)",
+  "pack": "bottle of 30 ml Dry Syrup",
+  "bill_line": "Cefixime (100mg)"
+ },
+ {
+  "id": 118,
+  "product": "Dexin Kid 125mg Tablet",
+  "composition": "Cefalexin (125mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefalexin (125mg)"
+ },
+ {
+  "id": 119,
+  "product": "Krirox 250mg Tablet",
+  "composition": "Cefuroxime (250mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefuroxime (250mg)"
+ },
+ {
+  "id": 120,
+  "product": "Oflopar 200mg Tablet",
+  "composition": "Ofloxacin (200mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ofloxacin (200mg)"
+ },
+ {
+  "id": 121,
+  "product": "Ancef CV Tablet",
+  "composition": "Cefixime (200mg) + Clavulanic Acid (125mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefixime (200mg) + Clavulanic Acid (125mg)"
+ },
+ {
+  "id": 122,
+  "product": "Zeropip Injection",
+  "composition": "Piperacillin (4000mg) + Tazobactum (500mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Piperacillin (4000mg) + Tazobactum (500mg) Injection"
+ },
+ {
+  "id": 123,
+  "product": "V Cefi 100mg Tablet",
+  "composition": "Cefixime (100mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefixime (100mg)"
+ },
+ {
+  "id": 124,
+  "product": "Macroclar 250mg Tablet",
+  "composition": "Clarithromycin (250mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Clarithromycin (250mg)"
+ },
+ {
+  "id": 125,
+  "product": "Tazolead Injection",
+  "composition": "Piperacillin (4000mg) + Tazobactum (500mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Piperacillin (4000mg) + Tazobactum (500mg) Injection"
+ },
+ {
+  "id": 126,
+  "product": "Clavbook Dry Syrup",
+  "composition": "Amoxycillin  (200mg) + Clavulanic Acid (28.5mg)",
+  "pack": "bottle of 30 ml Dry Syrup",
+  "bill_line": "Amoxycillin  (200mg) + Clavulanic Acid (28.5mg)"
+ },
+ {
+  "id": 127,
+  "product": "Cafage-L 200mg/250mg Tablet",
+  "composition": "Cefpodoxime Proxetil (200mg) + Levofloxacin (250mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefpodoxime Proxetil (200mg) + Levofloxacin (250mg)"
+ },
+ {
+  "id": 128,
+  "product": "Podocef 50mg Syrup",
+  "composition": "Cefpodoxime Proxetil (50mg)",
+  "pack": "bottle of 30 ml Syrup",
+  "bill_line": "Cefpodoxime Proxetil (50mg)"
+ },
+ {
+  "id": 129,
+  "product": "Renapod 100mg Tablet DT",
+  "composition": "Cefpodoxime Proxetil (100mg)",
+  "pack": "strip of 10 tablet dt",
+  "bill_line": "Cefpodoxime Proxetil (100mg)"
+ },
+ {
+  "id": 130,
+  "product": "Vanaz-S 1000mg/500mg Injection",
+  "composition": "Ceftriaxone (1000mg) + Sulbactam (500mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Ceftriaxone (1000mg) + Sulbactam (500mg) Injection"
+ },
+ {
+  "id": 131,
+  "product": "Seftriax 1000mg Injection",
+  "composition": "Ceftriaxone (1000mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Ceftriaxone (1000mg) Injection"
+ },
+ {
+  "id": 132,
+  "product": "Awin Kid 200mg/28.5mg Tablet DT",
+  "composition": "Amoxycillin  (200mg) + Clavulanic Acid (28.5mg)",
+  "pack": "strip of 10 tablet dt",
+  "bill_line": "Amoxycillin  (200mg) + Clavulanic Acid (28.5mg)"
+ },
+ {
+  "id": 133,
+  "product": "Acmox 500mg Capsule",
+  "composition": "Amoxycillin (500mg)",
+  "pack": "strip of 10 capsules",
+  "bill_line": "Amoxycillin (500mg)"
+ },
+ {
+  "id": 134,
+  "product": "Clvu 200 mg/125 mg Tablet",
+  "composition": "Cefixime (200mg) + Clavulanic Acid (125mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefixime (200mg) + Clavulanic Acid (125mg)"
+ },
+ {
+  "id": 135,
+  "product": "Cefcloud 100mg Dry Suspension",
+  "composition": "Cefpodoxime Proxetil (100mg)",
+  "pack": "bottle of 30 ml Suspension",
+  "bill_line": "Cefpodoxime Proxetil (100mg)"
+ },
+ {
+  "id": 136,
+  "product": "Vanpox 100 Oral Suspension",
+  "composition": "Cefpodoxime Proxetil (100mg)",
+  "pack": "bottle of 30 ml Oral Suspension",
+  "bill_line": "Cefpodoxime Proxetil (100mg)"
+ },
+ {
+  "id": 137,
+  "product": "Ceftacef 1gm Injection",
+  "composition": "Ceftazidime (1gm)",
+  "pack": "vial of 1 Powder for Injection",
+  "bill_line": "Ceftazidime (1gm) Injection"
+ },
+ {
+  "id": 138,
+  "product": "StayHappi Amikacin 500mg Injection",
+  "composition": "Amikacin (500mg)",
+  "pack": "vial of 2 ml Injection",
+  "bill_line": "Amikacin (500mg) Injection"
+ },
+ {
+  "id": 139,
+  "product": "Floxiquin OZ 200mg/500mg Tablet",
+  "composition": "Ofloxacin (200mg) + Ornidazole (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ofloxacin (200mg) + Ornidazole (500mg)"
+ },
+ {
+  "id": 140,
+  "product": "Giamox CV LB 500mg/125mg Tablet",
+  "composition": "Amoxycillin (500mg) + Clavulanic Acid (125mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Amoxycillin (500mg) + Clavulanic Acid (125mg)"
+ },
+ {
+  "id": 141,
+  "product": "Pecef SB 1000mg/500mg Injection",
+  "composition": "Ceftriaxone (1000mg) + Sulbactam (500mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Ceftriaxone (1000mg) + Sulbactam (500mg) Injection"
+ },
+ {
+  "id": 142,
+  "product": "Zeesuper 500mg Tablet",
+  "composition": "Azithromycin (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Azithromycin (500mg)"
+ },
+ {
+  "id": 143,
+  "product": "Azilad 250 LB Tablet",
+  "composition": "Azithromycin (250mg) + Lactic acid bacillus (60Million spores)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Azithromycin (250mg) + Lactic acid bacillus (60Million spores)"
+ },
+ {
+  "id": 144,
+  "product": "Allexone 1.5 Injection",
+  "composition": "Cefoperazone (1000mg) + Sulbactam (500mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Cefoperazone (1000mg) + Sulbactam (500mg) Injection"
+ },
+ {
+  "id": 145,
+  "product": "Tiniba 500 Tablet",
+  "composition": "Tinidazole (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Tinidazole (500mg)"
+ },
+ {
+  "id": 146,
+  "product": "Zurox 500 Tablet",
+  "composition": "Cefuroxime (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefuroxime (500mg)"
+ },
+ {
+  "id": 147,
+  "product": "Xylomox CV 1000mg/200mg Injection",
+  "composition": "Amoxycillin  (1000mg) + Clavulanic Acid (200mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Amoxycillin  (1000mg) + Clavulanic Acid (200mg) Injection"
+ },
+ {
+  "id": 148,
+  "product": "Cin-CT 500mg/600mg Tablet",
+  "composition": "Ciprofloxacin (500mg) + Tinidazole (600mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ciprofloxacin (500mg) + Tinidazole (600mg)"
+ },
+ {
+  "id": 149,
+  "product": "Aziday Kid 200mg Tablet",
+  "composition": "Azithromycin (200mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Azithromycin (200mg)"
+ },
+ {
+  "id": 150,
+  "product": "Nexclav LB 500mg/125mg Tablet",
+  "composition": "Amoxycillin (500mg) + Clavulanic Acid (125mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Amoxycillin (500mg) + Clavulanic Acid (125mg)"
+ },
+ {
+  "id": 151,
+  "product": "Deblo OZ Suspension",
+  "composition": "Ofloxacin (50mg) + Ornidazole (125mg)",
+  "pack": "bottle of 60 ml Suspension",
+  "bill_line": "Ofloxacin (50mg) + Ornidazole (125mg)"
+ },
+ {
+  "id": 152,
+  "product": "Emirik 100mg Injection",
+  "composition": "Amikacin (100mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Amikacin (100mg) Injection"
+ },
+ {
+  "id": 153,
+  "product": "Acctum 500 Tablet",
+  "composition": "Cefuroxime (500mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Cefuroxime (500mg)"
+ },
+ {
+  "id": 154,
+  "product": "Zoxil CV 1000 mg/200 mg Injection",
+  "composition": "Amoxycillin  (1000mg) + Clavulanic Acid (200mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Amoxycillin  (1000mg) + Clavulanic Acid (200mg) Injection"
+ },
+ {
+  "id": 155,
+  "product": "Azisal 250 Tablet",
+  "composition": "Azithromycin (250mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Azithromycin (250mg)"
+ },
+ {
+  "id": 156,
+  "product": "Stafcure CV 500 Tablet",
+  "composition": "Cefuroxime (500mg) + Clavulanic Acid (125mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefuroxime (500mg) + Clavulanic Acid (125mg)"
+ },
+ {
+  "id": 157,
+  "product": "Cefwar CV 50 mg/31.25 mg Dry Syrup",
+  "composition": "Cefpodoxime Proxetil (50mg) + Clavulanic Acid (31.25mg)",
+  "pack": "bottle of 30 ml Dry Syrup",
+  "bill_line": "Cefpodoxime Proxetil (50mg) + Clavulanic Acid (31.25mg)"
+ },
+ {
+  "id": 158,
+  "product": "Lupamik 250mg Injection",
+  "composition": "Amikacin (250mg)",
+  "pack": "vial of 2 ml Injection",
+  "bill_line": "Amikacin (250mg) Injection"
+ },
+ {
+  "id": 159,
+  "product": "AK-60 P Tablet DT",
+  "composition": "Ampicillin (125mg) + Cloxacillin (125mg)",
+  "pack": "strip of 10 tablet dt",
+  "bill_line": "Ampicillin (125mg) + Cloxacillin (125mg)"
+ },
+ {
+  "id": 160,
+  "product": "Ofel 400mg Tablet",
+  "composition": "Ofloxacin (400mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ofloxacin (400mg)"
+ },
+ {
+  "id": 161,
+  "product": "Amflo 200mg Tablet",
+  "composition": "Ofloxacin (200mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ofloxacin (200mg)"
+ },
+ {
+  "id": 162,
+  "product": "Fivdoxi 200mg Tablet DT",
+  "composition": "Cefpodoxime Proxetil (200mg)",
+  "pack": "strip of 10 tablet dt",
+  "bill_line": "Cefpodoxime Proxetil (200mg)"
+ },
+ {
+  "id": 163,
+  "product": "Fevibid 200mg Tablet",
+  "composition": "Ofloxacin (200mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ofloxacin (200mg)"
+ },
+ {
+  "id": 164,
+  "product": "Floxilex 500mg Tablet",
+  "composition": "Levofloxacin (500mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Levofloxacin (500mg)"
+ },
+ {
+  "id": 165,
+  "product": "Marypod 50mg Tablet DT",
+  "composition": "Cefpodoxime Proxetil (50mg)",
+  "pack": "strip of 10 tablet dt",
+  "bill_line": "Cefpodoxime Proxetil (50mg)"
+ },
+ {
+  "id": 166,
+  "product": "Genfix Dry Syrup",
+  "composition": "Cefixime (100mg)",
+  "pack": "bottle of 30 ml Dry Syrup",
+  "bill_line": "Cefixime (100mg)"
+ },
+ {
+  "id": 167,
+  "product": "Biocefmix-O Dry Syrup",
+  "composition": "Cefixime (50mg) + Ofloxacin (50mg)",
+  "pack": "bottle of 30 ml Oral Suspension",
+  "bill_line": "Cefixime (50mg) + Ofloxacin (50mg)"
+ },
+ {
+  "id": 168,
+  "product": "Tecxone 1000mg Injection",
+  "composition": "Ceftriaxone (1000mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Ceftriaxone (1000mg) Injection"
+ },
+ {
+  "id": 169,
+  "product": "Ceftmark 250mg Injection",
+  "composition": "Ceftriaxone (250mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Ceftriaxone (250mg) Injection"
+ },
+ {
+  "id": 170,
+  "product": "Elthrocin 250mg Tablet",
+  "composition": "Erythromycin (250mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Erythromycin (250mg)"
+ },
+ {
+  "id": 171,
+  "product": "Oflee 100mg Tablet",
+  "composition": "Ofloxacin (100mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ofloxacin (100mg)"
+ },
+ {
+  "id": 172,
+  "product": "Roxikin Suspension",
+  "composition": "Roxithromycin (50mg)",
+  "pack": "bottle of 30 ml Suspension",
+  "bill_line": "Roxithromycin (50mg)"
+ },
+ {
+  "id": 173,
+  "product": "Roxid M Tablet",
+  "composition": "Roxithromycin (150mg) + Ambroxol (60mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Roxithromycin (150mg) + Ambroxol (60mg)"
+ },
+ {
+  "id": 174,
+  "product": "Tancef 1000mg Injection",
+  "composition": "Ceftriaxone (1000mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Ceftriaxone (1000mg) Injection"
+ },
+ {
+  "id": 175,
+  "product": "Meroward 500mg Injection",
+  "composition": "Meropenem (500mg)",
+  "pack": "vial of 1 Powder for Injection",
+  "bill_line": "Meropenem (500mg) Injection"
+ },
+ {
+  "id": 176,
+  "product": "Zithrodol 200 Oral Suspension",
+  "composition": "Azithromycin (200mg)",
+  "pack": "bottle of 15 ml Oral Suspension",
+  "bill_line": "Azithromycin (200mg)"
+ },
+ {
+  "id": 177,
+  "product": "Qualifest 1gm Injection",
+  "composition": "Ceftazidime (1gm)",
+  "pack": "vial of 1 Powder for Injection",
+  "bill_line": "Ceftazidime (1gm) Injection"
+ },
+ {
+  "id": 178,
+  "product": "Athiro 500 Tablet",
+  "composition": "Azithromycin (500mg)",
+  "pack": "strip of 3 tablets",
+  "bill_line": "Azithromycin (500mg)"
+ },
+ {
+  "id": 179,
+  "product": "Shinetrex 100mg Injection",
+  "composition": "Ceftriaxone (100mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Ceftriaxone (100mg) Injection"
+ },
+ {
+  "id": 180,
+  "product": "Morcef 750mg Injection",
+  "composition": "Cefuroxime (750mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Cefuroxime (750mg) Injection"
+ },
+ {
+  "id": 181,
+  "product": "Ofron 200mg Tablet",
+  "composition": "Ofloxacin (200mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Ofloxacin (200mg)"
+ },
+ {
+  "id": 182,
+  "product": "Foloup CV 100mg/62.5mg Tablet DT",
+  "composition": "Cefpodoxime Proxetil (100mg) + Clavulanic Acid (62.5mg)",
+  "pack": "strip of 10 tablet dt",
+  "bill_line": "Cefpodoxime Proxetil (100mg) + Clavulanic Acid (62.5mg)"
+ },
+ {
+  "id": 183,
+  "product": "Roxime-CV 625 Tablet",
+  "composition": "Cefuroxime (500mg) + Clavulanic Acid (125mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Cefuroxime (500mg) + Clavulanic Acid (125mg)"
+ },
+ {
+  "id": 184,
+  "product": "Trinox 250mg Injection",
+  "composition": "Ceftriaxone (250mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Ceftriaxone (250mg) Injection"
+ },
+ {
+  "id": 185,
+  "product": "Foxy 500mg Tablet",
+  "composition": "Cefuroxime (500mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Cefuroxime (500mg)"
+ },
+ {
+  "id": 186,
+  "product": "Ecef OD 750mg Tablet",
+  "composition": "Cefalexin (750mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Cefalexin (750mg)"
+ },
+ {
+  "id": 187,
+  "product": "Sepomax 250 Tablet",
+  "composition": "Cefuroxime (250mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefuroxime (250mg)"
+ },
+ {
+  "id": 188,
+  "product": "AMI 500mg Injection",
+  "composition": "Amikacin (500mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Amikacin (500mg) Injection"
+ },
+ {
+  "id": 189,
+  "product": "Ochlor 250mg Capsule",
+  "composition": "Chloramphenicol (250mg)",
+  "pack": "strip of 10 capsules",
+  "bill_line": "Chloramphenicol (250mg)"
+ },
+ {
+  "id": 190,
+  "product": "Adispore Oral Suspension",
+  "composition": "Cefalexin (125mg/5ml)",
+  "pack": "bottle of 30 ml Oral Suspension",
+  "bill_line": "Cefalexin (125mg/5ml)"
+ },
+ {
+  "id": 191,
+  "product": "Cymox 125mg Dry Syrup",
+  "composition": "Amoxycillin (125mg)",
+  "pack": "bottle of 30 ml Dry Syrup",
+  "bill_line": "Amoxycillin (125mg)"
+ },
+ {
+  "id": 192,
+  "product": "Actidrox 250mg Tablet DT",
+  "composition": "Cefadroxil (250mg)",
+  "pack": "strip of 10 tablet dt",
+  "bill_line": "Cefadroxil (250mg)"
+ },
+ {
+  "id": 193,
+  "product": "Vesroz 500mg Tablet",
+  "composition": "Cefuroxime (500mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Cefuroxime (500mg)"
+ },
+ {
+  "id": 194,
+  "product": "Solfix O 1000mg Injection",
+  "composition": "Ceftriaxone (1000mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Ceftriaxone (1000mg) Injection"
+ },
+ {
+  "id": 195,
+  "product": "Keftac 1000mg Injection",
+  "composition": "Ceftriaxone (1000mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Ceftriaxone (1000mg) Injection"
+ },
+ {
+  "id": 196,
+  "product": "Norflox 200 Tablet",
+  "composition": "Norfloxacin (200mg) + Lactobacillus (60Million spores)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Norfloxacin (200mg) + Lactobacillus (60Million spores)"
+ },
+ {
+  "id": 197,
+  "product": "Merotiva 1000mg Injection",
+  "composition": "Meropenem (1000mg)",
+  "pack": "vial of 1 Injection",
+  "bill_line": "Meropenem (1000mg) Injection"
+ },
+ {
+  "id": 198,
+  "product": "Cefivot AZ Kid Tablet",
+  "composition": "Cefixime (200mg) + Azithromycin (250mg)",
+  "pack": "strip of 10 tablets",
+  "bill_line": "Cefixime (200mg) + Azithromycin (250mg)"
+ },
+ {
+  "id": 199,
+  "product": "Farobact 200 Tablet",
+  "composition": "Faropenem (200mg)",
+  "pack": "strip of 6 tablets",
+  "bill_line": "Faropenem (200mg)"
+ },
+ {
+  "id": 200,
+  "product": "Moxicot-CV Dds Dry Syrup",
+  "composition": "Amoxycillin  (400mg) + Clavulanic Acid (57mg)",
+  "pack": "bottle of 30 ml Oral Suspension",
+  "bill_line": "Amoxycillin  (400mg) + Clavulanic Acid (57mg)"
+ }
+]

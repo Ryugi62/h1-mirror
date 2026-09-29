@@ -74,7 +74,8 @@ def district_html(view) -> str:
             f"WHO not-recommended combinations: {view['not_recommended_lines']} lines.</p>")
 
 
-CHIP = {"Access": "#15803d", "Watch": "#b45309", "Reserve": "#b91c1c", "Not recommended": "#6d28d9", "Unclassified": "#6b7280"}
+CHIP = {"Access": "#15803d", "Watch": "#b45309", "Reserve": "#b91c1c", "Not recommended": "#6d28d9",
+        "Not WHO-listed combination": "#0e7490", "Unclassified": "#6b7280"}
 
 
 def register_html(pharmacy: str, month: str, entries: list) -> str:

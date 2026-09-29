@@ -65,6 +65,11 @@ SPELLING = {"amoxycillin": "amoxicillin", "cephalexin": "cefalexin", "sulphameth
             "tazobactum": "tazobactam", "sulbactum": "sulbactam"}   # v0.6: spellings in Indian catalogue compositions
 EXTRA_SALTS = (" proxetil", " potassium", " disodium")
 INJECTABLE = re.compile(r"\b(?:inj|injection|infusion|iv|i\.v\.|vial)\b", re.I)
+# v0.7: co-ingredients that are not antibiotics (dropped before classifying the antibiotic part; never guessed otherwise)
+NON_ANTIBIOTIC = re.compile(r"^(?:lactobacillus|lactic acid bacillus|lactic acid|bacillus clausii|bacillus coagulans|"
+                            r"saccharomyces|streptococcus faecalis|clostridium butyricum|bifidobacterium|lactic ferments|"
+                            r"serratiopeptidase|serrapeptase|bromelain|bromelains|trypsin|chymotrypsin|ambroxol|bromhexine)\b")
+NOT_LISTED = "Not WHO-listed combination"
 SPLIT = re.compile(r"\s*(?:\+|&|/|,|\band\b|\bwith\b)\s*", re.I)
 
 
@@ -138,11 +143,26 @@ class RuleTable:
         key = frozenset(parse_label(label))
         if key in self.not_recommended:
             return "Not recommended"
+        route = "iv" if INJECTABLE.search(label) else "oral"
+        hit = self._lookup(key, route)
+        if hit:
+            return hit
+        core = frozenset(p for p in key if not NON_ANTIBIOTIC.match(p))
+        if core and core != key:                            # rule 3: drop probiotic / enzyme / mucolytic add-ons
+            if core in self.not_recommended:
+                return "Not recommended"
+            hit = self._lookup(core, route)
+            if hit:
+                return hit
+        if len(core) >= 2 and all(self._lookup(frozenset([p]), route) for p in core):
+            return NOT_LISTED                               # rule 4: antibiotics combined, on neither WHO list
+        return "Unclassified"                               # rule 5: unknown ingredient, never guessed
+
+    def _lookup(self, key, route):
         if key in self.aware:
             return self.aware[key]
-        route = "iv" if INJECTABLE.search(label) else "oral"
         other = "oral" if route == "iv" else "iv"
-        return self.by_route[route].get(key) or self.by_route[other].get(key) or "Unclassified"
+        return self.by_route[route].get(key) or self.by_route[other].get(key)
 
 
 # ---- v0.3: prescriber mirror (same-specialty peers) and district view (aggregates only) ----------------------
@@ -152,7 +172,7 @@ Line = namedtuple("Line", "prescriber_reg specialty pharmacy category")   # pres
 
 
 def _mix(lines):
-    c = {k: 0 for k in ("Access", "Watch", "Reserve", "Not recommended", "Unclassified")}
+    c = {k: 0 for k in ("Access", "Watch", "Reserve", "Not recommended", NOT_LISTED, "Unclassified")}
     for ln in lines:
         c[ln.category] += 1
     awr = c["Access"] + c["Watch"] + c["Reserve"]

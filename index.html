@@ -28,7 +28,7 @@
   th { font-size:13px; color:var(--sub); font-weight:600; }
   .chip { display:inline-block; font-size:13px; font-weight:700; padding:2px 10px; border-radius:999px; color:#fff; white-space:nowrap; }
   .Access { background:var(--access); } .Watch { background:var(--watch); } .Reserve { background:var(--reserve); }
-  .Not.recommended, .NR { background:var(--nr); } .Unclassified { background:var(--unc); }
+  .Not.recommended, .NR { background:var(--nr); } .Unclassified { background:var(--unc); } .NL { background:#0e7490; }
   .stats { display:grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap:10px; margin-top:14px; }
   .stat { background:#f9fafb; border:1px solid var(--line); border-radius:12px; padding:12px; }
   .stat b { display:block; font-size:22px; }
@@ -47,7 +47,7 @@
 
   <section class="card" aria-labelledby="s1">
     <h2 id="s1">1 · Classify lines as written on an Indian bill or H1 register</h2>
-    <p class="hint">One line per row: brand or generic name, strength and form. Brand → molecule (a table of <b>59,341 Indian antibiotic brands</b> built from a public Indian medicine catalogue, plus field-study brands) → WHO AWaRe 2023 group, plus WHO's list of not-recommended fixed-dose combinations. A fixed rule table decides; no AI in this step. On that catalogue the rule table classifies <b>94.4% of 62,351 marketed systemic antibiotic products</b>; 23.9% are WHO-not-recommended combinations (<code>engine/run_india_catalogue.py</code>).</p>
+    <p class="hint">One line per row: brand or generic name, strength and form. Brand → molecule (a table of <b>59,341 Indian antibiotic brands</b> built from a public Indian medicine catalogue, plus field-study brands) → WHO AWaRe 2023 group, plus WHO's list of not-recommended fixed-dose combinations. A fixed rule table decides; no AI in this step. On that catalogue the rule table classifies <b>98.7% of 62,351 listed systemic antibiotic products</b> (listed products, not sales; 23.9% are WHO-not-recommended combinations) and agrees with an independent blind reader on <b>200/200</b> randomly drawn products (<code>engine/run_india_catalogue.py</code>, <code>audit/</code>).</p>
     <textarea id="lines" spellcheck="false">Taxim-O 200 Tablet
 Augmentin 625 Duo Tablet
 Azithral 500 Tablet
@@ -57,7 +57,8 @@ Ofloxacin 200mg &amp; Ornidazole 500mg Tab
 Linezolid 600 mg Tablets
 Metronidazole 400 mg Tablets
 Minocycline 100 mg Injection
-Zifi 200 Tablet
+Ofloxacin 200 mg + Tinidazole 600 mg Tablets
+Cefixime 200 mg + Lactobacillus Tablets
 Newbrand-XL 200 Tablet</textarea>
     <div class="row"><button id="btn-classify" disabled>Classify</button><span class="hint" style="margin:0">Unknown brand → “Unclassified” until the chemist maps it once.</span></div>
     <div id="classified"></div>
@@ -82,7 +83,7 @@ Newbrand-XL 200 Tablet</textarea>
     <div id="register" style="margin-top:12px;max-height:420px;overflow:auto"></div>
   </section>
 
-  <p class="foot">Code, tests and data sources: <a href="https://github.com/Ryugi62/h1-mirror">github.com/Ryugi62/h1-mirror</a> · Idea submitted to Hack2Heal 2.0 (Global Healthcare Innovation Hackathon). The sample month is synthetic: no real pharmacy, prescriber or patient. WHO AWaRe classification 2023 (CC BY-NC-SA 3.0 IGO) · brand table from Gautham et al., Antibiotics 2022;11(4):523.</p>
+  <p class="foot">Code, tests and data sources: <a href="https://github.com/Ryugi62/h1-mirror">github.com/Ryugi62/h1-mirror</a> · Idea submitted to Hack2Heal 2.0 (Global Healthcare Innovation Hackathon). The sample month is synthetic: no real pharmacy, prescriber or patient. WHO AWaRe classification 2023 (CC BY-NC-SA 3.0 IGO) · brand tables from Gautham et al., Antibiotics 2022;11(4):523 and the Indian Medicine Dataset (junioralive, GitHub, MIT licence).</p>
 </main>
 
 <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
@@ -148,7 +149,7 @@ def month_js(csv_text, month, council_text):
 function classify() {
   const out = JSON.parse(py.globals.get("classify_js")($("lines").value));
   $("classified").innerHTML = `<table><thead><tr><th>Line as written</th><th>Engine verdict</th></tr></thead><tbody>${
-    out.map(([l, v]) => `<tr><td>${esc(l)}</td><td><span class="chip ${v === "Not recommended" ? "NR" : esc(v)}">${v === "Not recommended" ? "WHO: not recommended" : esc(v)}</span></td></tr>`).join("")
+    out.map(([l, v]) => `<tr><td>${esc(l)}</td><td><span class="chip ${v === "Not recommended" ? "NR" : v === "Not WHO-listed combination" ? "NL" : esc(v)}">${v === "Not recommended" ? "WHO: not recommended" : esc(v)}</span></td></tr>`).join("")
   }</tbody></table>`;
 }
 

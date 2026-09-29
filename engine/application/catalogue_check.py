@@ -46,10 +46,21 @@ def check(products: list, rules: RuleTable) -> dict:
             unclassified[" + ".join(sorted(parse_label(p.composition)))] += 1
     n = len(scope)
     classified = n - verdicts["Unclassified"]
+    # de-duplicated view: one row per distinct (product name without pack/form, composition)
+    uniq = {}
+    for p in scope:
+        uniq.setdefault((re.sub(r"\s+", " ", p.name.lower()).strip(), p.composition.lower()), p)
+    dv = Counter(rules.classify_label(label_for(p)) for p in uniq.values())
+    u = len(uniq)
     return {"products_total": len(products), "systemic_antibiotic_products": n,
             "by_verdict": dict(verdicts.most_common()),
             "classified_pct": round(100 * classified / n, 1) if n else None,
             "not_recommended_pct": round(100 * verdicts["Not recommended"] / n, 1) if n else None,
+            "not_who_listed_pct": round(100 * verdicts["Not WHO-listed combination"] / n, 1) if n else None,
+            "dedup_rule": "one row per distinct (product name, composition); counts are listed products, not sales",
+            "unique_products": u,
+            "unique_classified_pct": round(100 * (u - dv["Unclassified"]) / u, 1) if u else None,
+            "unique_not_recommended_pct": round(100 * dv["Not recommended"] / u, 1) if u else None,
             "top_unclassified": unclassified.most_common(15)}
 
 

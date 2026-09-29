@@ -75,10 +75,17 @@ open English Prescribing Dataset (EPD), because India has no open prescription-l
 - Spellings "Tazobactum", "Sulbactum". Given "Piperacillin + Tazobactum Injection", Then Watch; "Ceftriaxone + Tazobactum", Then Not recommended.
 - Given the national table, Then every earlier label verdict is unchanged. Success: 5 more tests (31).
 
+### v0.7 — explicit rule for combinations on neither WHO list + accuracy audit (2026-09-30)
+- Order: WHO not-recommended exact → AWaRe exact (route) → drop known non-antibiotic add-ons (probiotics, enzymes,
+  mucolytics) and retry → ≥2 antibiotics on neither list = "Not WHO-listed combination" → else "Unclassified" (never guessed).
+- Catalogue: 98.7% of 62,351 listed products classified (was 94.4%); de-duplicated 61,571 → 98.7%.
+- Audit: 200 random catalogue products labelled by an independent blind reader from the written rules: 200/200 agree.
+- Success: 5 more tests (36).
+
 ## Non-goals
 Clinical appropriateness per patient (needs diagnosis); DDD-based metrics (EPD items only); handwriting extraction (Final Round).
 
 ## Layout
 `domain/` pure rules (no I/O) ← `application/` (use cases; `run_evidence.py` for the national check) ← `adapters/`
 (NHSBSA HTTP, register CSV, rule files, letter HTML) ← `cli.py` / `index.html` (infrastructure).
-Tests: `python3 -m pytest -q engine/tests` (31 = v0.1 4 + v0.2 5 + v0.3 5 + v0.4 10 + v0.5 2 + v0.6 5).
+Tests: `python3 -m pytest -q engine/tests` (36 = v0.1 4 + v0.2 5 + v0.3 5 + v0.4 10 + v0.5 2 + v0.6 5 + v0.7 5).

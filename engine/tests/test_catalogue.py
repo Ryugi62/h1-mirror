@@ -51,3 +51,11 @@ def test_national_brand_table_keeps_every_published_verdict():
              "Minocycline 100 mg Injection": "Reserve", "Azithral 500 Tablet": "Watch", "Augmentin 625 Duo Tablet": "Access"}
     got = {k: nat.classify_label(k) for k in cases}
     assert got == cases
+
+
+def test_blind_reader_audit_on_200_real_indian_products_reproduces():
+    import subprocess
+    repo = os.path.join(HERE, "..", "..")
+    subprocess.run([sys.executable, os.path.join(repo, "audit", "score_audit.py")], check=True, capture_output=True)
+    res = json.load(open(os.path.join(repo, "audit", "results.json")))
+    assert res["n"] == 200 and res["agree"] == 200
