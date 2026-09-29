@@ -47,15 +47,18 @@
 
   <section class="card" aria-labelledby="s1">
     <h2 id="s1">1 · Classify lines as written on an Indian bill or H1 register</h2>
-    <p class="hint">One line per row: brand or generic name, strength and form. Brand → molecule → WHO AWaRe 2023 group, plus WHO's list of not-recommended fixed-dose combinations. A fixed rule table decides; no AI in this step.</p>
+    <p class="hint">One line per row: brand or generic name, strength and form. Brand → molecule (a table of <b>59,341 Indian antibiotic brands</b> built from a public Indian medicine catalogue, plus field-study brands) → WHO AWaRe 2023 group, plus WHO's list of not-recommended fixed-dose combinations. A fixed rule table decides; no AI in this step. On that catalogue the rule table classifies <b>94.4% of 62,351 marketed systemic antibiotic products</b>; 23.9% are WHO-not-recommended combinations (<code>engine/run_india_catalogue.py</code>).</p>
     <textarea id="lines" spellcheck="false">Taxim-O 200 Tablet
+Augmentin 625 Duo Tablet
+Azithral 500 Tablet
 Clavam 625
 Cefixime 200 mg + Ofloxacin 200 mg Tablets
 Ofloxacin 200mg &amp; Ornidazole 500mg Tab
 Linezolid 600 mg Tablets
 Metronidazole 400 mg Tablets
 Minocycline 100 mg Injection
-Zifi 200 Tablet</textarea>
+Zifi 200 Tablet
+Newbrand-XL 200 Tablet</textarea>
     <div class="row"><button id="btn-classify" disabled>Classify</button><span class="hint" style="margin:0">Unknown brand → “Unclassified” until the chemist maps it once.</span></div>
     <div id="classified"></div>
   </section>
@@ -86,7 +89,8 @@ Zifi 200 Tablet</textarea>
 <script>
 const ENGINE_FILES = ["domain/__init__.py", "domain/aware.py", "application/__init__.py", "application/monthly_mirror.py",
   "adapters/__init__.py", "adapters/register_csv.py", "adapters/letter_html.py", "adapters/rule_files.py"];
-const DATA = {aware: "engine/data/aware2023.json", notrec: "engine/data/notrec2023.json", brands: "engine/data/brandmap-gautham2022.json"};
+const DATA = {aware: "engine/data/aware2023.json", notrec: "engine/data/notrec2023.json", brands: "engine/data/brandmap-gautham2022.json",
+  national: "engine/data/brandmap-india-catalogue.json"};
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const pct = (x) => x == null ? "—" : (100 * x).toFixed(1) + "%";
@@ -102,15 +106,16 @@ async function boot() {
     }));
     const txt = {};
     for (const [k, p] of Object.entries(DATA)) { const r = await fetch(p); if (!r.ok) throw new Error("fetch " + p); txt[k] = await r.text(); }
-    py.globals.set("AW_TXT", txt.aware); py.globals.set("NR_TXT", txt.notrec); py.globals.set("BR_TXT", txt.brands);
+    py.globals.set("AW_TXT", txt.aware); py.globals.set("NR_TXT", txt.notrec); py.globals.set("BR_TXT", txt.brands); py.globals.set("NAT_TXT", txt.national);
     py.runPython(`
 import sys, json
 sys.path.insert(0, "/engine")
-from adapters.rule_files import from_json_text
+from adapters.rule_files import from_json_text_national
 from adapters import register_csv
 from adapters.letter_html import letter_html, district_html, register_html
 from application.monthly_mirror import classify_lines, run_month, pharmacy_register
-RT = from_json_text(AW_TXT, NR_TXT, BR_TXT)
+RT = from_json_text_national(AW_TXT, NR_TXT, BR_TXT, NAT_TXT)
+N_BRANDS = len(json.loads(NAT_TXT)["brands"])
 
 def classify_js(text):
     return json.dumps(classify_lines(text.splitlines(), RT))

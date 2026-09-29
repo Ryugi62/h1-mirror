@@ -24,6 +24,7 @@ Idea submitted to **Hack2Heal 2.0 — Global Healthcare Innovation Hackathon** (
 | CSV adapter, printable HTML letter, CLI | built, tested | `engine/adapters/`, `engine/cli.py` |
 | Chemist's own printable monthly register (their lines only, WHO group per line) | built, tested | `pharmacy_register` in `engine/application/` |
 | Browser demo running the **same Python files** via Pyodide | built, checked headless | `index.html` |
+| **Real Indian data check**: every marketed systemic antibiotic product in a public Indian medicine catalogue (253,973 products, MIT) classified; national brand table (59,341 brands) | reproducible | `engine/run_india_catalogue.py` → `engine/data/evidence-india-catalogue.json` |
 | National-scale engine check: 2,264,718 NHS antibacterial items (June 2025), 97.3% classified | reproducible | `engine/run_evidence.py` → `engine/data/evidence-EPD_202506.json` |
 | Blind mock-register reading test: 40 synthetic handwritten-style rows read by Claude Haiku | scored, reproducible | `mocktest/` |
 | Photo capture app with on-phone patient masking | Final Round | — |
@@ -36,9 +37,10 @@ England run is an engine check only; any effect in India has to be measured in I
 
 ```bash
 python3 -m pip install pytest          # the engine itself is standard-library Python 3.9+
-python3 -m pytest -q engine/tests      # 26 tests
+python3 -m pytest -q engine/tests      # 31 tests
 python3 engine/cli.py examples/register-sample.csv --council examples/council-register-sample.txt --out out/   # letters in out/letters/, district view in out/district.json
 python3 mocktest/score_mock.py mocktest/truth.json mocktest/predictions-haiku-2026-09-26.jsonl /tmp/mock.json
+python3 engine/run_india_catalogue.py      # Indian catalogue check + national brand table (downloads the MIT catalogue, verifies sha256)
 python3 engine/run_evidence.py EPD_202506   # national check (downloads aggregates from the NHSBSA open-data API)
 ```
 
@@ -64,6 +66,7 @@ sent a letter.
 | Check | Result |
 |---|---|
 | Indian label lines → verdict (brands via Gautham et al. 2022) | Taxim-O 200 → Watch · Clavam 625 → Access · Cefixime + Ofloxacin → WHO not recommended · Linezolid → Reserve |
+| **Indian medicine catalogue** (junioralive/Indian-Medicine-Dataset, MIT, 253,973 products) | 62,351 marketed systemic antibiotic products · **94.4% classified** · Watch 31,407 · Access 11,676 · Reserve 905 · **WHO not-recommended combinations 14,892 (23.9%)** · 9 of 11 field-study brands (Gautham 2022) present. Unclassified 3,471: mostly antibiotic + probiotic or nitroimidazole combinations on neither WHO list, and anti-TB drugs (outside AWaRe). |
 | National-scale engine check (NHSBSA EPD, June 2025) | 2,264,718 items, 7,916 organisations, 97.3% classified, Access 83.6% of classified |
 | Blind mock-register reading (40 synthetic rows, closed vocabulary of 16 drug lines, 5 handwriting-style fonts; Wilson 95% CI) | AWaRe verdict 40/40 (91–100%) · drug line + strength 40/40 · registration digits 35/40 (74–95%) · full reg. no. 31/40 (62–88%) · quantity 34/40 (71–93%) · **all fields right 27/40 (52–80%)**. Not real handwriting: real anonymised pages come next. |
 | Synthetic sample month (12 pharmacies, 2 photo-only) | 1,466 lines · 22 letters · 143 photo lines and 11 misread-number lines kept out of letters · district Access 56.8% · 68 not-recommended lines · 1 unknown brand flagged to map |
@@ -87,6 +90,8 @@ letter, NHSBSA API) ← `engine/cli.py` / `index.html`. Specification with Given
 - WHO AWaRe classification of antibiotics, 2023 (WHO-MHP-HPS-EML-2023.04), CC BY-NC-SA 3.0 IGO — `engine/data/aware2023.json`,
   `engine/data/notrec2023.json` are derived from it for non-commercial research use.
 - Brand → composition pairs as listed in Gautham M et al., *Antibiotics* 2022;11(4):523, Table 4.
+- Indian Medicine Dataset (junioralive, GitHub, MIT licence), `indian_medicine_data.csv`, sha256 `c9de0182…`, downloaded
+  2026-09-29 — source of `engine/data/brandmap-india-catalogue.json`.
 - NHS Business Services Authority, English Prescribing Dataset (Open Government Licence v3.0).
 - Koya SF et al., *Lancet Reg Health SE Asia* 2022 · Hallsworth M et al., *Lancet* 2016 · Rakesh PS et al., *GHSP* 2021 ·
   Farooqui HH et al., *JAC-AMR* 2020 (full list of 16 references in the submission PDF).

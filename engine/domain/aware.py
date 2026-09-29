@@ -61,7 +61,8 @@ FORM_WORDS = {"tablet", "tablets", "tab", "tabs", "capsule", "capsules", "cap", 
               "film", "coated", "kid", "forte", "sachet", "sachets", "granules", "infusion", "vial"}
 SPELLING = {"amoxycillin": "amoxicillin", "cephalexin": "cefalexin", "sulphamethoxazole": "sulfamethoxazole",
             "potassium clavulanate": "clavulanic acid", "clavulanate potassium": "clavulanic acid",
-            "clavulanate": "clavulanic acid", "diluted potassium clavulanate": "clavulanic acid"}
+            "clavulanate": "clavulanic acid", "diluted potassium clavulanate": "clavulanic acid",
+            "tazobactum": "tazobactam", "sulbactum": "sulbactam"}   # v0.6: spellings in Indian catalogue compositions
 EXTRA_SALTS = (" proxetil", " potassium", " disodium")
 INJECTABLE = re.compile(r"\b(?:inj|injection|infusion|iv|i\.v\.|vial)\b", re.I)
 SPLIT = re.compile(r"\s*(?:\+|&|/|,|\band\b|\bwith\b)\s*", re.I)
@@ -88,14 +89,28 @@ def parse_label(label: str) -> list:
 
 
 class BrandTable:
-    """Brand -> composition, e.g. 'Taxim-O' -> 'cefixime'. Longest brand prefix wins; the rest (strength) is kept."""
+    """Brand -> composition, e.g. 'Taxim-O' -> 'cefixime'. Longest brand prefix wins; the rest (strength) is kept.
+    Indexed by first word so a national catalogue (tens of thousands of brands) stays fast (v0.6)."""
 
     def __init__(self, brands: dict):
-        self.brands = sorted(((b.lower(), c) for b, c in brands.items()), key=lambda x: -len(x[0]))
+        self.index = {}
+        for b, c in brands.items():
+            low = b.lower().strip()
+            if low:
+                self.index.setdefault(low.split()[0], []).append((low, c))
+        for lst in self.index.values():
+            lst.sort(key=lambda x: -len(x[0]))
 
     def resolve(self, label: str) -> str:
         low = label.strip().lower()
-        for brand, comp in self.brands:
+        if not low:
+            return label
+        first = low.split()[0]
+        candidates = self.index.get(first, [])
+        if not candidates:                        # brand glued to strength or punctuation, e.g. 'Taxim-O200'
+            candidates = [bc for k, lst in self.index.items() if low.startswith(k) for bc in lst]
+            candidates.sort(key=lambda x: -len(x[0]))
+        for brand, comp in candidates:
             if low == brand or (low.startswith(brand) and not low[len(brand)].isalpha()):
                 return comp + label.strip()[len(brand):]
         return label

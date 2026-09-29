@@ -66,10 +66,19 @@ open English Prescribing Dataset (EPD), because India has no open prescription-l
 - Given R3 with 25 photo-only lines, Then no letter and R3 is not a peer. Given a misread "R2X", Then no letter, 20 unmatched lines.
 - Success: 2 more tests (26).
 
+### v0.6 — real Indian data: a public national medicine catalogue (2026-09-30)
+- **Catalogue check**: every marketed (not discontinued) systemic antibiotic product (composition names an AWaRe molecule; no
+  cream / drops / eye / ear / vaginal forms) of the Indian Medicine Dataset (MIT) is classified by the one rule table.
+  Result: 62,351 products, 94.4% classified, 23.9% WHO not-recommended (`run_india_catalogue.py`, evidence JSON).
+- **National brand table**: brand (product name without the form word) → composition; generic-named products and ambiguous
+  brand names are dropped; the field-study table takes precedence. Indexed by first word.
+- Spellings "Tazobactum", "Sulbactum". Given "Piperacillin + Tazobactum Injection", Then Watch; "Ceftriaxone + Tazobactum", Then Not recommended.
+- Given the national table, Then every earlier label verdict is unchanged. Success: 5 more tests (31).
+
 ## Non-goals
 Clinical appropriateness per patient (needs diagnosis); DDD-based metrics (EPD items only); handwriting extraction (Final Round).
 
 ## Layout
 `domain/` pure rules (no I/O) ← `application/` (use cases; `run_evidence.py` for the national check) ← `adapters/`
 (NHSBSA HTTP, register CSV, rule files, letter HTML) ← `cli.py` / `index.html` (infrastructure).
-Tests: `python3 -m pytest -q engine/tests` (26 = v0.1 4 + v0.2 5 + v0.3 5 + v0.4 10 + v0.5 2).
+Tests: `python3 -m pytest -q engine/tests` (31 = v0.1 4 + v0.2 5 + v0.3 5 + v0.4 10 + v0.5 2 + v0.6 5).

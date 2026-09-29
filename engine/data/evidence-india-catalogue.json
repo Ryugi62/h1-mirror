@@ -1,0 +1,93 @@
+{
+ "products_total": 253973,
+ "systemic_antibiotic_products": 62351,
+ "by_verdict": {
+  "Watch": 31407,
+  "Not recommended": 14892,
+  "Access": 11676,
+  "Unclassified": 3471,
+  "Reserve": 905
+ },
+ "classified_pct": 94.4,
+ "not_recommended_pct": 23.9,
+ "top_unclassified": [
+  [
+   "cefixime + lactobacillus",
+   1005
+  ],
+  [
+   "metronidazole + ofloxacin",
+   362
+  ],
+  [
+   "isoniazid + rifampicin",
+   238
+  ],
+  [
+   "ofloxacin + tinidazole",
+   218
+  ],
+  [
+   "norfloxacin + tinidazole",
+   213
+  ],
+  [
+   "doxycycline + lactobacillus",
+   161
+  ],
+  [
+   "amoxicillin + lactobacillus",
+   137
+  ],
+  [
+   "azithromycin + lactic acid bacillus",
+   94
+  ],
+  [
+   "azithromycin + fluconazole",
+   89
+  ],
+  [
+   "nitazoxanide + ofloxacin",
+   83
+  ],
+  [
+   "amoxicillin + bromhexine",
+   62
+  ],
+  [
+   "furazolidone + metronidazole",
+   60
+  ],
+  [
+   "flavoxate + ofloxacin",
+   55
+  ],
+  [
+   "lactobacillus + ofloxacin",
+   53
+  ],
+  [
+   "ambroxol + roxithromycin",
+   41
+  ]
+ ],
+ "source": "https://raw.githubusercontent.com/junioralive/Indian-Medicine-Dataset/main/DATA/indian_medicine_data.csv",
+ "licence": "MIT (junioralive/Indian-Medicine-Dataset)",
+ "sha256": "c9de0182474f652b7790a85bf534d0df9bd814575fcbda7109696d0fb3bec042",
+ "sha256_matches_2026_09_29": true,
+ "elapsed_sec": 8.3,
+ "brands_in_table": 59341,
+ "gautham_2022_brands_found": [
+  "Cefix",
+  "Clavam",
+  "Monocef-O",
+  "Moxileb",
+  "Moxilium",
+  "Sefbactum",
+  "Taxim-O",
+  "Wymox",
+  "Zofix"
+ ],
+ "gautham_2022_brands_total": 11
+}
