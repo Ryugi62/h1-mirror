@@ -57,3 +57,14 @@ def classify_lines(labels: list, rules: RuleTable) -> list:
 
 def _tidy(label: str) -> str:
     return " ".join(label.split())
+
+
+RegisterEntry = namedtuple("RegisterEntry", "date prescriber drug_line qty verdict")
+
+
+def pharmacy_register(rows: list, rules: RuleTable, pharmacy: str) -> list:
+    """The chemist's own month, ready to print for inspection: only this pharmacy's lines, each with its rule-table
+    group. Patient details stay on the chemist's own copy and never enter the engine."""
+    return [RegisterEntry(r.date, r.prescriber_reg or "unregistered", _tidy(r.drug_line), r.qty,
+                          rules.classify_label(r.drug_line))
+            for r in sorted(rows, key=lambda r: (r.date, r.prescriber_reg or "")) if r.pharmacy == pharmacy]

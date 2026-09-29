@@ -72,3 +72,24 @@ def district_html(view) -> str:
     return (f"<p><b>District aggregate</b> ({view['pharmacies']} pharmacies, {view['lines']} lines, no pharmacy or "
             f"prescriber names): Access {pct(view['access_share'])} · Watch + Reserve {pct(view['wr_share'])} · "
             f"WHO not-recommended combinations: {view['not_recommended_lines']} lines.</p>")
+
+
+CHIP = {"Access": "#15803d", "Watch": "#b45309", "Reserve": "#b91c1c", "Not recommended": "#6d28d9", "Unclassified": "#6b7280"}
+
+
+def register_html(pharmacy: str, month: str, entries: list) -> str:
+    """Printable monthly antibiotic register for ONE chemist (their own lines only)."""
+    counts = {}
+    for e in entries:
+        counts[e.verdict] = counts.get(e.verdict, 0) + 1
+    summary = " · ".join(f"{k}: {v}" for k, v in sorted(counts.items(), key=lambda kv: -kv[1]))
+    rows = "".join(
+        f"<tr><td style='white-space:nowrap'>{escape(e.date)}</td><td style='color:#6b7280;white-space:nowrap'>chemist's copy</td><td>{escape(e.prescriber)}</td>"
+        f"<td>{escape(e.drug_line)}</td><td style='white-space:nowrap'>{escape(e.qty)}</td>"
+        f"<td style='color:{CHIP.get(e.verdict, '#111827')};font-weight:700'>{escape(e.verdict)}</td></tr>" for e in entries)
+    return f"""<section class="h1m-register" style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#111827">
+<div style="font-size:12px;letter-spacing:.06em;color:#047857;font-weight:700">ANTIBIOTIC SALES REGISTER · {escape(pharmacy)} · {escape(month)}</div>
+<div style="font-size:13px;color:#4b5563;margin:2px 0 8px">{len(entries)} lines · {escape(summary)} · printed from bills + register rows the chemist confirmed; kept by the chemist for inspection</div>
+<table style="width:100%;border-collapse:collapse;font-size:13px">
+<thead><tr><th style="text-align:left">Date</th><th style="text-align:left">Patient</th><th style="text-align:left">Prescriber Reg. No.</th><th style="text-align:left">Drug &amp; strength</th><th style="text-align:left">Qty</th><th style="text-align:left">WHO group</th></tr></thead>
+<tbody>{rows}</tbody></table></section>"""

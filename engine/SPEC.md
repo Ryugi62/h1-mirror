@@ -54,7 +54,9 @@ open English Prescribing Dataset (EPD), because India has no open prescription-l
   "Zifi 200 Tablet" reported as unclassified (`tests/test_application.py`, 5 tests).
 - CLI (`engine/cli.py`) writes 30 letters; the blind mock-register test re-scores to 40/40 verdicts, 35/40 reg. digits, 34/40 qty
   (`tests/test_cli_and_mock.py`, 2 tests). The browser demo (`index.html`) runs the same `domain/` + `application/` files in Pyodide.
-- Success: 23 tests pass.
+- **Chemist's register**: one pharmacy's own lines with their WHO group, printable for inspection; no other pharmacy's lines
+  (`pharmacy_register`, 1 test).
+- Success: 24 tests pass.
 
 ## Non-goals
 Clinical appropriateness per patient (needs diagnosis); DDD-based metrics (EPD items only); handwriting extraction (Final Round).
@@ -62,4 +64,4 @@ Clinical appropriateness per patient (needs diagnosis); DDD-based metrics (EPD i
 ## Layout
 `domain/` pure rules (no I/O) ← `application/` (use cases; `run_evidence.py` for the national check) ← `adapters/`
 (NHSBSA HTTP, register CSV, rule files, letter HTML) ← `cli.py` / `index.html` (infrastructure).
-Tests: `python3 -m pytest -q engine/tests` (23 = v0.1 4 + v0.2 5 + v0.3 5 + v0.4 9).
+Tests: `python3 -m pytest -q engine/tests` (24 = v0.1 4 + v0.2 5 + v0.3 5 + v0.4 10).

@@ -22,6 +22,7 @@ Idea submitted to **Hack2Heal 2.0 — Global Healthcare Innovation Hackathon** (
 | Rule table: WHO AWaRe 2023 (257 entries, route-aware), 103 WHO not-recommended FDCs, Indian spellings, brand table | built, tested | `engine/domain/aware.py`, `engine/data/` |
 | Monthly use case: lines → private letters (≥20 lines, same specialty) + district aggregate (≥10 pharmacies) | built, tested | `engine/application/monthly_mirror.py` |
 | CSV adapter, printable HTML letter, CLI | built, tested | `engine/adapters/`, `engine/cli.py` |
+| Chemist's own printable monthly register (their lines only, WHO group per line) | built, tested | `pharmacy_register` in `engine/application/` |
 | Browser demo running the **same Python files** via Pyodide | built, checked headless | `index.html` |
 | National-scale engine check: 2,264,718 NHS antibacterial items (June 2025), 97.3% classified | reproducible | `engine/run_evidence.py` → `engine/data/evidence-EPD_202506.json` |
 | Blind mock-register reading test: 40 synthetic handwritten-style rows read by Claude Haiku | scored, reproducible | `mocktest/` |
@@ -35,7 +36,7 @@ England run is an engine check only; any effect in India has to be measured in I
 
 ```bash
 python3 -m pip install pytest          # the engine itself is standard-library Python 3.9+
-python3 -m pytest -q engine/tests      # 23 tests
+python3 -m pytest -q engine/tests      # 24 tests
 python3 engine/cli.py examples/register-sample.csv --out out/   # 30 letters in out/letters/, district view in out/district.json
 python3 mocktest/score_mock.py mocktest/truth.json mocktest/predictions-haiku-2026-09-26.jsonl /tmp/mock.json
 python3 engine/run_evidence.py EPD_202506   # national check (downloads aggregates from the NHSBSA open-data API)

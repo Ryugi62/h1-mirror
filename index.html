@@ -72,6 +72,13 @@ Zifi 200 Tablet</textarea>
     <div id="month"></div>
   </section>
 
+  <section class="card" aria-labelledby="s3">
+    <h2 id="s3">3 · The chemist's side: a printable register, not extra work</h2>
+    <p class="hint">Each chemist sees only their own month: every antibiotic line from bills and confirmed register rows, with its WHO group, ready to print for the drug inspector. Patient details stay on the chemist's own copy. No other pharmacy's data, and the district never gets a per-pharmacy report.</p>
+    <div class="row"><select id="pharm" disabled><option>run a month in section 2 first</option></select><button id="btn-print" class="secondary" disabled>Print this register</button></div>
+    <div id="register" style="margin-top:12px;max-height:420px;overflow:auto"></div>
+  </section>
+
   <p class="foot">Code, tests and data sources: <a href="https://github.com/Ryugi62/h1-mirror">github.com/Ryugi62/h1-mirror</a> · Idea submitted to Hack2Heal 2.0 (Global Healthcare Innovation Hackathon). The sample month is synthetic: no real pharmacy, prescriber or patient. WHO AWaRe classification 2023 (CC BY-NC-SA 3.0 IGO) · brand table from Gautham et al., Antibiotics 2022;11(4):523.</p>
 </main>
 
@@ -101,12 +108,18 @@ import sys, json
 sys.path.insert(0, "/engine")
 from adapters.rule_files import from_json_text
 from adapters import register_csv
-from adapters.letter_html import letter_html, district_html
-from application.monthly_mirror import classify_lines, run_month
+from adapters.letter_html import letter_html, district_html, register_html
+from application.monthly_mirror import classify_lines, run_month, pharmacy_register
 RT = from_json_text(AW_TXT, NR_TXT, BR_TXT)
 
 def classify_js(text):
     return json.dumps(classify_lines(text.splitlines(), RT))
+
+def register_js(csv_text, pharmacy, month):
+    return register_html(pharmacy, month, pharmacy_register(register_csv.parse(csv_text), RT, pharmacy))
+
+def pharmacies_js(csv_text):
+    return json.dumps(sorted({r.pharmacy for r in register_csv.parse(csv_text)}))
 
 def month_js(csv_text, month):
     rep = run_month(register_csv.parse(csv_text), RT, month)
@@ -133,7 +146,18 @@ function classify() {
   }</tbody></table>`;
 }
 
+let lastCsv = "";
+function showRegister() {
+  $("register").innerHTML = py.globals.get("register_js")(lastCsv, $("pharm").value, "2026-08");
+}
+function fillPharmacies() {
+  const ph = JSON.parse(py.globals.get("pharmacies_js")(lastCsv));
+  $("pharm").innerHTML = ph.map((p) => `<option>${esc(p)}</option>`).join("");
+  $("pharm").disabled = ph.length === 0; $("btn-print").disabled = ph.length === 0;
+  if (ph.length) showRegister();
+}
 function runMonth(csvText, label) {
+  lastCsv = csvText;
   try {
     report = JSON.parse(py.globals.get("month_js")(csvText, "2026-08"));
   } catch (e) { $("month").innerHTML = `<p class="err">${esc(String(e.message).split("\n").filter(Boolean).pop())}</p>`; return; }
@@ -156,7 +180,15 @@ function runMonth(csvText, label) {
     <div id="letter"></div>`;
   const show = () => { const l = report.letters[+$("who").value]; $("letter").innerHTML = l ? l.html : "<p class='hint'>No prescriber reached 20 lines.</p>"; };
   $("who").addEventListener("change", show); show();
+  fillPharmacies();
 }
+$("pharm").addEventListener("change", showRegister);
+$("btn-print").addEventListener("click", () => {
+  const w = window.open("", "_blank");
+  if (!w) return;
+  w.document.write(`<!doctype html><meta charset="utf-8"><title>Register ${esc($("pharm").value)}</title><body style="margin:24px">${$("register").innerHTML}`);
+  w.document.close(); w.focus(); w.print();
+});
 
 $("btn-classify").addEventListener("click", classify);
 $("btn-sample").addEventListener("click", async () => {

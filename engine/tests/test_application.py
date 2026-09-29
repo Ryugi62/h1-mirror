@@ -64,3 +64,14 @@ def test_sample_month_gives_letters_district_view_and_flags_unknown_brand():
 def test_classify_lines_for_the_demo_box():
     out = classify_lines(["Taxim-O 200 Tablet", "", "  Linezolid 600 mg Tablets "], RT)
     assert out == [("Taxim-O 200 Tablet", "Watch"), ("Linezolid 600 mg Tablets", "Reserve")]
+
+
+def test_chemist_gets_own_printable_register_only():
+    from application.monthly_mirror import pharmacy_register
+    from adapters.letter_html import register_html
+    rows = _rows("R1", "GP", "P1", 2, 1) + _rows("R2", "GP", "P2", 5, 5) + _rows(None, "Unregistered", "P1", 0, 1)
+    reg = pharmacy_register(rows, RT, "P1")
+    assert len(reg) == 4 and {e.verdict for e in reg} == {"Access", "Watch"}
+    assert [e.prescriber for e in reg].count("unregistered") == 1
+    html = register_html("P1", "2026-08", reg)
+    assert "P1" in html and "R2" not in html and html.count("<tr>") == 5   # header + 4 lines, no other pharmacy
