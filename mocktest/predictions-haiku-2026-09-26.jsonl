@@ -1,0 +1,40 @@
+{"id": "mock-01", "date": "02/08/26", "prescriber_name": "Dr. Iyer", "reg_no": "WEMC 76270", "drug_line": "Cefixime 200 mg", "qty": "5 cap"}
+{"id": "mock-02", "date": "11/09/26", "prescriber_name": "Dr. Roy", "reg_no": "WBMC 70204", "drug_line": "Taxim-O 200", "qty": "5 cap"}
+{"id": "mock-03", "date": "09/09/26", "prescriber_name": "Dr. Das", "reg_no": "TCMC 54809", "drug_line": "Clavam 625", "qty": "10 tab"}
+{"id": "mock-04", "date": "16/09/26", "prescriber_name": "Dr. Sen", "reg_no": "TCMC 61544", "drug_line": "Amoxycillin 500 mg", "qty": "5 cap"}
+{"id": "mock-05", "date": "07/08/26", "prescriber_name": "Dr. Nair", "reg_no": "W.B. MG 38567", "drug_line": "Azithromycin 500 mg", "qty": "5 cap"}
+{"id": "mock-06", "date": "21/08/26", "prescriber_name": "Dr. Kurian", "reg_no": "WBMC 63429", "drug_line": "Cefixime 200 + Ofloxacin 200", "qty": "3 tab"}
+{"id": "mock-07", "date": "28/08/26", "prescriber_name": "Dr. Ghosh", "reg_no": "TCMC 49945", "drug_line": "Ofloxacin 200 + Ornidazole 500", "qty": "4 cap"}
+{"id": "mock-08", "date": "02/09/26", "prescriber_name": "Dr. Banerjee", "reg_no": "WBMC 22733", "drug_line": "Cefpodoxime 200 mg", "qty": "10 tab"}
+{"id": "mock-09", "date": "15/09/26", "prescriber_name": "Dr. Roy", "reg_no": "TCMC 52004", "drug_line": "Wymox 500", "qty": "15 cap"}
+{"id": "mock-10", "date": "07/08/26", "prescriber_name": "Dr. Nair", "reg_no": "W.B. MG 97988", "drug_line": "Linezolid 600 mg", "qty": "11 cap"}
+{"id": "mock-11", "date": "15/08/26", "prescriber_name": "Dr. Iyer", "reg_no": "WBMC 74846", "drug_line": "Doxycycline 100 mg", "qty": "5 cap"}
+{"id": "mock-12", "date": "24/08/26", "prescriber_name": "Dr. Roy", "reg_no": "WBMC 90705", "drug_line": "Ciprofloxacin 500 mg", "qty": "3 tab"}
+{"id": "mock-13", "date": "01/08/26", "prescriber_name": "Dr. Pillai", "reg_no": "WBMC 47248", "drug_line": "Monocef-O 200", "qty": "6 tab"}
+{"id": "mock-14", "date": "23/09/26", "prescriber_name": "Dr. Roy", "reg_no": "TCMC 36458", "drug_line": "Levofloxacin 500 mg", "qty": "6 tab"}
+{"id": "mock-15", "date": "27/09/26", "prescriber_name": "Dr. Sen", "reg_no": "FG.W.C 52780", "drug_line": "Cefuroxime 500 mg", "qty": "7 tab"}
+{"id": "mock-16", "date": "11/09/26", "prescriber_name": "Dr. Sen", "reg_no": "WBMC 73767", "drug_line": "Amoxycillin 500 + clavulanate 125", "qty": null}
+{"id": "mock-17", "date": "10/08/26", "prescriber_name": "Dr. Sen", "reg_no": "WBMC 41498", "drug_line": "Clavam 625", "qty": "5 cap"}
+{"id": "mock-18", "date": "10/08/26", "prescriber_name": "Dr. Menon", "reg_no": "TCMC 32345", "drug_line": "Doxycycline 100 mg", "qty": "14 cap"}
+{"id": "mock-19", "date": "16/08/26", "prescriber_name": "Dr. Pillai", "reg_no": "WBMC 47408", "drug_line": "Cefpodoxime 200 mg", "qty": "7 tab"}
+{"id": "mock-20", "date": "19/09/26", "prescriber_name": "Dr. Sen", "reg_no": "FG.W.C 18409", "drug_line": "Levofloxacin 500 mg", "qty": "15 cap"}
+{"id": "mock-21", "date": "07/08/26", "prescriber_name": "Dr. Pillai", "reg_no": "TCMC 38443", "drug_line": "Cefuroxime 500 mg", "qty": "10 tab"}
+{"id": "mock-22", "date": "08/09/26", "prescriber_name": "Dr. Das", "reg_no": "TCMC 59449", "drug_line": "Doxycycline 100 mg", "qty": "5 cap"}
+{"id": "mock-23", "date": "16/09/26", "prescriber_name": "Dr. Sen", "reg_no": "WBMC 26830", "drug_line": "Amoxycillin 500 mg", "qty": "6 tab"}
+{"id": "mock-24", "date": "24/09/26", "prescriber_name": "Dr. Iyer", "reg_no": "TCMC 99553", "drug_line": "Linezolid 600 mg", "qty": "14 cap"}
+{"id": "mock-25", "date": "20/08/26", "prescriber_name": "Dr. Kirian", "reg_no": "FG.W.C 20793", "drug_line": "Clavam 625", "qty": "3 tab"}
+{"id": "mock-26", "date": "23/08/26", "prescriber_name": "Dr. Menon", "reg_no": "TCMC 84682", "drug_line": "Levofloxacin 500 mg", "qty": "15 cap"}
+{"id": "mock-27", "date": "02/08/26", "prescriber_name": "Dr. Son", "reg_no": "TCMC 51368", "drug_line": "Amoxycillin 500 + Clavulanate 125", "qty": null}
+{"id": "mock-28", "date": "09/09/26", "prescriber_name": "Dr. Ghosh", "reg_no": "TCMC 44173", "drug_line": "Clavam 625", "qty": "1 strip"}
+{"id": "mock-29", "date": "10/09/26", "prescriber_name": "Dr. Pillai", "reg_no": "WBMC 87978", "drug_line": "Clavam 625", "qty": "5 pap"}
+{"id": "mock-30", "date": "07/08/26", "prescriber_name": "Dr. Banerjee", "reg_no": "FG.W.C 29771", "drug_line": "Ciprofloxacin 500 mg", "qty": "5 cap"}
+{"id": "mock-31", "date": "15/08/26", "prescriber_name": "Dr. Varghese", "reg_no": "WBMC 89356", "drug_line": "Cefixime 200 mg", "qty": "1 strip"}
+{"id": "mock-32", "date": "16/08/26", "prescriber_name": "Dr. Menon", "reg_no": "TCMC 58690", "drug_line": "Monocef-O 200", "qty": "5 cap"}
+{"id": "mock-33", "date": "22/09/26", "prescriber_name": "Dr. Varghese", "reg_no": "TCMC 37165", "drug_line": "Monocef-O 200", "qty": "3 tab"}
+{"id": "mock-34", "date": "08/09/26", "prescriber_name": "Dr. Banerjee", "reg_no": "WBMC 97316", "drug_line": "Ofloxacin 200 + Ornidazole 500", "qty": "10 tab"}
+{"id": "mock-35", "date": "29/08/26", "prescriber_name": "Dr. Banerjee", "reg_no": "WB.W.C 99787", "drug_line": "Linezolid 600 mg", "qty": "10 cap"}
+{"id": "mock-36", "date": "22/08/26", "prescriber_name": "Dr. Varghese", "reg_no": "TCMC 48873", "drug_line": "Taxim-O 200", "qty": "5 cap"}
+{"id": "mock-37", "date": "24/08/26", "prescriber_name": "Dr. Das", "reg_no": "WBMC 74037", "drug_line": "Linezolid 600 mg", "qty": "14 cap"}
+{"id": "mock-38", "date": "10/09/26", "prescriber_name": "Dr. Pillai", "reg_no": "TCMC 14707", "drug_line": "Azithromycin 500 mg", "qty": "1 strip"}
+{"id": "mock-39", "date": "02/09/26", "prescriber_name": "Dr. Roy", "reg_no": "WBMC 82402", "drug_line": "Ciprofloxacin 500 mg", "qty": "3 tab"}
+{"id": "mock-40", "date": "02/09/26", "prescriber_name": "Dr. Pillai", "reg_no": "FG.W.C 70642", "drug_line": "Cefpodoxime 200 mg", "qty": "7 tab"}

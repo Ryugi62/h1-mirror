@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>H1 Mirror — live demo</title>
+<meta name="description" content="H1 Mirror: Schedule H1 register lines to private monthly antibiotic feedback for each registered prescriber. The repo's Python engine, running in your browser.">
+<style>
+  :root { --bg:#f6f7f9; --card:#fff; --ink:#111827; --sub:#4b5563; --line:#e5e7eb; --brand:#047857; --brand-soft:#ecfdf5;
+          --access:#15803d; --watch:#b45309; --reserve:#b91c1c; --nr:#6d28d9; --unc:#6b7280; color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 28px 16px 64px; }
+  h1 { font-size: 30px; margin: 0 0 4px; letter-spacing: -.01em; }
+  h2 { font-size: 20px; margin: 0 0 4px; }
+  .lead { color: var(--sub); margin: 0 0 18px; max-width: 760px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; margin: 16px 0; }
+  .hint { color: var(--sub); font-size: 14px; margin: 0 0 12px; }
+  .pill { display:inline-block; font-size:13px; padding:3px 10px; border-radius:999px; background:#fef3c7; color:#92400e; }
+  .pill.ready { background: var(--brand-soft); color: var(--brand); }
+  textarea { width:100%; min-height:210px; font:14px/1.5 ui-monospace,Menlo,Consolas,monospace; padding:12px; border:1px solid var(--line); border-radius:12px; }
+  button, .btn { appearance:none; border:0; border-radius:12px; background:var(--brand); color:#fff; font-weight:700; font-size:15px; padding:11px 18px; cursor:pointer; }
+  button.secondary, .btn.secondary { background:#eef2f7; color:var(--ink); }
+  button:disabled { opacity:.45; cursor:not-allowed; }
+  .row { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:12px; }
+  table { width:100%; border-collapse:collapse; margin-top:12px; font-size:15px; }
+  th, td { text-align:left; padding:9px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { font-size:13px; color:var(--sub); font-weight:600; }
+  .chip { display:inline-block; font-size:13px; font-weight:700; padding:2px 10px; border-radius:999px; color:#fff; white-space:nowrap; }
+  .Access { background:var(--access); } .Watch { background:var(--watch); } .Reserve { background:var(--reserve); }
+  .Not.recommended, .NR { background:var(--nr); } .Unclassified { background:var(--unc); }
+  .stats { display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:10px; margin-top:14px; }
+  .stat { background:#f9fafb; border:1px solid var(--line); border-radius:12px; padding:12px; }
+  .stat b { display:block; font-size:22px; }
+  .stat span { font-size:13px; color:var(--sub); }
+  select { font-size:15px; padding:10px; border-radius:12px; border:1px solid var(--line); max-width:100%; }
+  #letter { margin-top:14px; overflow-x:auto; }
+  .foot { font-size:13px; color:var(--sub); margin-top:28px; }
+  a { color: var(--brand); }
+  .err { color: var(--reserve); font-size:14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>H1 Mirror <span id="status" class="pill">loading the Python engine…</span></h1>
+  <p class="lead">India's chemists already log every Schedule H1 antibiotic sale. H1 Mirror reads those lines and sends each registered prescriber a <b>private monthly mirror</b>: their Access / Watch / Reserve mix against same-specialty peers. This page runs the <b>same Python engine as the repository</b> (<code>engine/domain</code> + <code>engine/application</code>) inside your browser via Pyodide. Nothing you type leaves this page.</p>
+
+  <section class="card" aria-labelledby="s1">
+    <h2 id="s1">1 · Classify lines as written on an Indian bill or H1 register</h2>
+    <p class="hint">One line per row: brand or generic name, strength and form. Brand → molecule → WHO AWaRe 2023 group, plus WHO's list of not-recommended fixed-dose combinations. A fixed rule table decides; no AI in this step.</p>
+    <textarea id="lines" spellcheck="false">Taxim-O 200 Tablet
+Clavam 625
+Cefixime 200 mg + Ofloxacin 200 mg Tablets
+Ofloxacin 200mg &amp; Ornidazole 500mg Tab
+Linezolid 600 mg Tablets
+Metronidazole 400 mg Tablets
+Minocycline 100 mg Injection
+Zifi 200 Tablet</textarea>
+    <div class="row"><button id="btn-classify" disabled>Classify</button><span class="hint" style="margin:0">Unknown brand → “Unclassified” until the chemist maps it once.</span></div>
+    <div id="classified"></div>
+  </section>
+
+  <section class="card" aria-labelledby="s2">
+    <h2 id="s2">2 · One month of lines → private letters + district view</h2>
+    <p class="hint">Load the <b>synthetic</b> sample month (12 pharmacies, 30 registered prescribers, lines from unregistered providers) or your own CSV with columns <code>date, pharmacy, prescriber_reg, specialty, drug_line, qty</code>. Letters go only to registered prescribers with ≥20 lines, ranked only against the same specialty; the district sees aggregates only when ≥10 pharmacies contribute.</p>
+    <div class="row">
+      <button id="btn-sample" disabled>Run the sample month</button>
+      <label class="btn secondary" for="file" id="lbl-file">Upload a CSV</label>
+      <input id="file" type="file" accept=".csv,text/csv" hidden>
+      <a class="hint" style="margin:0" href="examples/register-sample.csv" download>download the sample CSV</a>
+    </div>
+    <div id="month"></div>
+  </section>
+
+  <p class="foot">Code, tests and data sources: <a href="https://github.com/Ryugi62/h1-mirror">github.com/Ryugi62/h1-mirror</a> · Idea submitted to Hack2Heal 2.0 (Global Healthcare Innovation Hackathon). The sample month is synthetic: no real pharmacy, prescriber or patient. WHO AWaRe classification 2023 (CC BY-NC-SA 3.0 IGO) · brand table from Gautham et al., Antibiotics 2022;11(4):523.</p>
+</main>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+<script>
+const ENGINE_FILES = ["domain/__init__.py", "domain/aware.py", "application/__init__.py", "application/monthly_mirror.py",
+  "adapters/__init__.py", "adapters/register_csv.py", "adapters/letter_html.py", "adapters/rule_files.py"];
+const DATA = {aware: "engine/data/aware2023.json", notrec: "engine/data/notrec2023.json", brands: "engine/data/brandmap-gautham2022.json"};
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pct = (x) => x == null ? "—" : (100 * x).toFixed(1) + "%";
+let py, report = null;
+
+async function boot() {
+  try {
+    py = await loadPyodide();
+    py.FS.mkdirTree("/engine/domain"); py.FS.mkdirTree("/engine/application"); py.FS.mkdirTree("/engine/adapters");
+    await Promise.all(ENGINE_FILES.map(async (f) => {
+      const r = await fetch("engine/" + f); if (!r.ok) throw new Error("fetch " + f);
+      py.FS.writeFile("/engine/" + f, await r.text());
+    }));
+    const txt = {};
+    for (const [k, p] of Object.entries(DATA)) { const r = await fetch(p); if (!r.ok) throw new Error("fetch " + p); txt[k] = await r.text(); }
+    py.globals.set("AW_TXT", txt.aware); py.globals.set("NR_TXT", txt.notrec); py.globals.set("BR_TXT", txt.brands);
+    py.runPython(`
+import sys, json
+sys.path.insert(0, "/engine")
+from adapters.rule_files import from_json_text
+from adapters import register_csv
+from adapters.letter_html import letter_html, district_html
+from application.monthly_mirror import classify_lines, run_month
+RT = from_json_text(AW_TXT, NR_TXT, BR_TXT)
+
+def classify_js(text):
+    return json.dumps(classify_lines(text.splitlines(), RT))
+
+def month_js(csv_text, month):
+    rep = run_month(register_csv.parse(csv_text), RT, month)
+    letters = sorted(rep.letters.values(), key=lambda l: -l.wr_share)
+    return json.dumps({"lines": rep.lines_total, "unregistered": rep.unregistered_lines,
+        "unclassified": rep.unclassified_lines, "unclassified_labels": rep.unclassified_labels,
+        "district": rep.district, "district_html": district_html(rep.district),
+        "letters": [{"reg": l.prescriber_reg, "specialty": l.specialty, "wr": l.wr_share, "pctl": l.percentile,
+                     "nr": sum(n for _, n in l.not_recommended), "html": letter_html(l)} for l in letters]})
+`);
+    $("status").textContent = "engine ready"; $("status").classList.add("ready");
+    $("btn-classify").disabled = false; $("btn-sample").disabled = false;
+    classify();
+  } catch (e) {
+    $("status").textContent = "engine failed to load"; console.error(e);
+    $("classified").innerHTML = `<p class="err">Could not load the engine (${esc(e.message)}). Run it locally: <code>python3 engine/cli.py examples/register-sample.csv</code></p>`;
+  }
+}
+
+function classify() {
+  const out = JSON.parse(py.globals.get("classify_js")($("lines").value));
+  $("classified").innerHTML = `<table><thead><tr><th>Line as written</th><th>Engine verdict</th></tr></thead><tbody>${
+    out.map(([l, v]) => `<tr><td>${esc(l)}</td><td><span class="chip ${v === "Not recommended" ? "NR" : esc(v)}">${v === "Not recommended" ? "WHO: not recommended" : esc(v)}</span></td></tr>`).join("")
+  }</tbody></table>`;
+}
+
+function runMonth(csvText, label) {
+  try {
+    report = JSON.parse(py.globals.get("month_js")(csvText, "2026-08"));
+  } catch (e) { $("month").innerHTML = `<p class="err">${esc(String(e.message).split("\n").filter(Boolean).pop())}</p>`; return; }
+  const d = report.district;
+  const unk = report.unclassified_labels.slice(0, 3).map(([l, n]) => `${esc(l)} ×${n}`).join(", ");
+  $("month").innerHTML = `
+    <p class="hint" style="margin-top:14px">${esc(label)}</p>
+    <div class="stats">
+      <div class="stat"><b>${report.lines.toLocaleString()}</b><span>antibiotic lines</span></div>
+      <div class="stat"><b>${report.letters.length}</b><span>private letters (registered, ≥20 lines)</span></div>
+      <div class="stat"><b>${d ? pct(d.access_share) : "—"}</b><span>district Access share${d ? ` (${d.pharmacies} pharmacies)` : " (withheld: &lt;10 pharmacies)"}</span></div>
+      <div class="stat"><b>${d ? d.not_recommended_lines : "—"}</b><span>lines of WHO not-recommended combinations</span></div>
+      <div class="stat"><b>${report.unregistered}</b><span>unregistered lines → aggregate only, never a letter</span></div>
+      <div class="stat"><b>${report.unclassified}</b><span>unclassified → map once${unk ? `: ${unk}` : ""}</span></div>
+    </div>
+    <div class="row">
+      <label for="who" class="hint" style="margin:0">Open one prescriber's letter (sorted by Watch + Reserve share):</label>
+      <select id="who">${report.letters.map((l, i) => `<option value="${i}">${esc(l.reg)} · ${esc(l.specialty)} · W+R ${pct(l.wr)} · ${l.pctl}th pct${l.nr ? ` · ${l.nr} not-rec.` : ""}</option>`).join("")}</select>
+    </div>
+    <div id="letter"></div>`;
+  const show = () => { const l = report.letters[+$("who").value]; $("letter").innerHTML = l ? l.html : "<p class='hint'>No prescriber reached 20 lines.</p>"; };
+  $("who").addEventListener("change", show); show();
+}
+
+$("btn-classify").addEventListener("click", classify);
+$("btn-sample").addEventListener("click", async () => {
+  const r = await fetch("examples/register-sample.csv"); runMonth(await r.text(), "Synthetic sample month (examples/register-sample.csv).");
+});
+$("file").addEventListener("change", async (ev) => {
+  const f = ev.target.files[0]; if (!f || !py) return; runMonth(await f.text(), `Your file: ${f.name} (processed in this browser only).`);
+});
+boot();
+</script>
+</body>
+</html>

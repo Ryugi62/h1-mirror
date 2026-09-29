@@ -1,0 +1,1287 @@
+{
+"amikacin": [
+"Access",
+"J01GB06",
+"Aminoglycosides"
+],
+"amoxicillin": [
+"Access",
+"J01CA04",
+"Penicillins"
+],
+"amoxicillin/clavulanic-acid": [
+"Access",
+"J01CR02",
+"Beta-lactam/beta-lactamase-inhibitor"
+],
+"ampicillin": [
+"Access",
+"J01CA01\u00a0",
+"Penicillins"
+],
+"ampicillin/sulbactam": [
+"Access",
+"J01CR01",
+"Beta-lactam/beta-lactamase-inhibitor"
+],
+"arbekacin": [
+"Watch",
+"J01GB12",
+"Aminoglycosides"
+],
+"aspoxicillin": [
+"Watch",
+"J01CA19",
+"Penicillins "
+],
+"azidocillin": [
+"Access",
+"J01CE04",
+"Penicillins "
+],
+"azithromycin": [
+"Watch",
+"J01FA10",
+"Macrolides"
+],
+"azlocillin": [
+"Watch",
+"J01CA09",
+"Penicillins "
+],
+"aztreonam": [
+"Reserve",
+"J01DF01",
+"Monobactams"
+],
+"bacampicillin": [
+"Access",
+"J01CA06",
+"Penicillins "
+],
+"bekanamycin": [
+"Watch",
+"J01GB13",
+"Aminoglycosides"
+],
+"benzathine-benzylpenicillin": [
+"Access",
+"J01CE08",
+"Penicillins"
+],
+"benzylpenicillin": [
+"Access",
+"J01CE01",
+"Penicillins"
+],
+"biapenem": [
+"Watch",
+"J01DH05",
+"Carbapenems"
+],
+"brodimoprim": [
+"Access",
+"J01EA02",
+"Trimethoprim-derivatives"
+],
+"carbenicillin": [
+"Watch",
+"J01CA03",
+"Penicillins"
+],
+"carindacillin": [
+"Watch",
+"J01CA05",
+"Penicillins"
+],
+"carumonam": [
+"Reserve",
+"J01DF02",
+"Monobactams"
+],
+"cefacetrile": [
+"Access",
+"J01DB10",
+"First-generation-cephalosporins"
+],
+"cefaclor": [
+"Watch",
+"J01DC04",
+"Second-generation-cephalosporins"
+],
+"cefadroxil": [
+"Access",
+"J01DB05",
+"First-generation-cephalosporins"
+],
+"cefalexin": [
+"Access",
+"J01DB01",
+"First-generation-cephalosporins"
+],
+"cefaloridine": [
+"Access",
+"J01DB02",
+"First-generation-cephalosporins"
+],
+"cefalotin": [
+"Access",
+"J01DB03",
+"First-generation-cephalosporins"
+],
+"cefamandole": [
+"Watch",
+"J01DC03",
+"Second-generation-cephalosporins"
+],
+"cefapirin": [
+"Access",
+"J01DB08",
+"First-generation-cephalosporins"
+],
+"cefatrizine": [
+"Access",
+"J01DB07",
+"First-generation-cephalosporins"
+],
+"cefazedone": [
+"Access",
+"J01DB06",
+"First-generation-cephalosporins"
+],
+"cefazolin": [
+"Access",
+"J01DB04",
+"First-generation-cephalosporins"
+],
+"cefbuperazone": [
+"Watch",
+"J01DC13",
+"Second-generation-cephalosporins"
+],
+"cefcapene-pivoxil": [
+"Watch",
+"J01DD17",
+"Third-generation-cephalosporins"
+],
+"cefdinir": [
+"Watch",
+"J01DD15",
+"Third-generation-cephalosporins"
+],
+"cefditoren-pivoxil": [
+"Watch",
+"J01DD16",
+"Third-generation-cephalosporins"
+],
+"cefepime": [
+"Watch",
+"J01DE01",
+"Fourth-generation-cephalosporins"
+],
+"cefetamet-pivoxil": [
+"Watch",
+"J01DD10",
+"Third-generation-cephalosporins"
+],
+"cefiderocol": [
+"Reserve",
+"J01DI04",
+"Other-cephalosporins"
+],
+"cefixime": [
+"Watch",
+"J01DD08",
+"Third-generation-cephalosporins"
+],
+"cefmenoxime": [
+"Watch",
+"J01DD05",
+"Third-generation-cephalosporins"
+],
+"cefmetazole": [
+"Watch",
+"J01DC09",
+"Second-generation-cephalosporins"
+],
+"cefminox": [
+"Watch",
+"J01DC12",
+"Second-generation-cephalosporins"
+],
+"cefodizime": [
+"Watch",
+"J01DD09",
+"Third-generation-cephalosporins"
+],
+"cefonicid": [
+"Watch",
+"J01DC06",
+"Second-generation-cephalosporins"
+],
+"cefoperazone": [
+"Watch",
+"J01DD12",
+"Third-generation-cephalosporins"
+],
+"ceforanide": [
+"Watch",
+"J01DC11",
+"Second-generation-cephalosporins"
+],
+"cefoselis": [
+"Watch",
+"to be assigned",
+"Fourth-generation-cephalosporins"
+],
+"cefotaxime": [
+"Watch",
+"J01DD01",
+"Third-generation-cephalosporins"
+],
+"cefotetan": [
+"Watch",
+"J01DC05",
+"Second-generation-cephalosporins"
+],
+"cefotiam": [
+"Watch",
+"J01DC07",
+"Second-generation-cephalosporins"
+],
+"cefoxitin": [
+"Watch",
+"J01DC01",
+"Second-generation-cephalosporins"
+],
+"cefozopran": [
+"Watch",
+"J01DE03",
+"Fourth-generation-cephalosporins"
+],
+"cefpiramide": [
+"Watch",
+"J01DD11",
+"Third-generation-cephalosporins"
+],
+"cefpirome": [
+"Watch",
+"J01DE02",
+"Fourth-generation-cephalosporins"
+],
+"cefpodoxime-proxetil": [
+"Watch",
+"J01DD13",
+"Third-generation-cephalosporins"
+],
+"cefprozil": [
+"Watch",
+"J01DC10",
+"Second-generation-cephalosporins"
+],
+"cefradine": [
+"Access",
+"J01DB09",
+"First-generation-cephalosporins"
+],
+"cefroxadine": [
+"Access",
+"J01DB11",
+"First-generation-cephalosporins"
+],
+"cefsulodin": [
+"Watch",
+"J01DD03",
+"Third-generation-cephalosporins"
+],
+"ceftaroline-fosamil": [
+"Reserve",
+"J01DI02\u00a0",
+"Fifth-generation cephalosporins"
+],
+"ceftazidime": [
+"Watch",
+"J01DD02",
+"Third-generation-cephalosporins"
+],
+"ceftazidime/avibactam": [
+"Reserve",
+"J01DD52",
+"Third-generation-cephalosporins"
+],
+"cefteram-pivoxil": [
+"Watch",
+"J01DD18",
+"Third-generation-cephalosporins"
+],
+"ceftezole": [
+"Access",
+"J01DB12",
+"First-generation-cephalosporins"
+],
+"ceftibuten": [
+"Watch",
+"J01DD14",
+"Third-generation-cephalosporins"
+],
+"ceftizoxime": [
+"Watch",
+"J01DD07",
+"Third-generation-cephalosporins"
+],
+"ceftobiprole-medocaril": [
+"Reserve",
+"J01DI01",
+"Fifth-generation cephalosporins"
+],
+"ceftolozane/tazobactam": [
+"Reserve",
+"J01DI54",
+"Fifth-generation cephalosporins"
+],
+"ceftriaxone": [
+"Watch",
+"J01DD04",
+"Third-generation-cephalosporins"
+],
+"cefuroxime": [
+"Watch",
+"J01DC02",
+"Second-generation-cephalosporins"
+],
+"chloramphenicol": [
+"Access",
+"J01BA01",
+"Amphenicols"
+],
+"chlortetracycline": [
+"Watch",
+"J01AA03",
+"Tetracyclines"
+],
+"cinoxacin": [
+"Watch",
+"J01MB06",
+"Quinolones"
+],
+"ciprofloxacin": [
+"Watch",
+"J01MA02",
+"Fluoroquinolones"
+],
+"clarithromycin": [
+"Watch",
+"J01FA09",
+"Macrolides"
+],
+"clindamycin": [
+"Access",
+"J01FF01",
+"Lincosamides"
+],
+"clofoctol": [
+"Watch",
+"J01XX03",
+"Phenol derivatives"
+],
+"clometocillin": [
+"Access",
+"J01CE07",
+"Penicillins "
+],
+"clomocycline": [
+"Watch",
+"J01AA11",
+"Tetracyclines"
+],
+"cloxacillin": [
+"Access",
+"J01CF02",
+"Penicillins"
+],
+"colistin_iv": [
+"Reserve",
+"J01XB01",
+"Polymyxins"
+],
+"colistin_oral": [
+"Reserve",
+"A07AA10",
+"Polymyxins"
+],
+"dalbavancin": [
+"Reserve",
+"J01XA04",
+"Glycopeptides"
+],
+"dalfopristin/quinupristin": [
+"Reserve",
+"J01FG02",
+"Streptogramins"
+],
+"daptomycin": [
+"Reserve",
+"J01XX09",
+"Lipopeptides"
+],
+"delafloxacin": [
+"Watch",
+"J01MA23",
+"Fluoroquinolones"
+],
+"demeclocycline": [
+"Watch",
+"J01AA01",
+"Tetracyclines"
+],
+"dibekacin": [
+"Watch",
+"J01GB09",
+"Aminoglycosides"
+],
+"dicloxacillin": [
+"Access",
+"J01CF01",
+"Penicillins "
+],
+"dirithromycin": [
+"Watch",
+"J01FA13",
+"Macrolides"
+],
+"doripenem": [
+"Watch",
+"J01DH04",
+"Carbapenems"
+],
+"doxycycline": [
+"Access",
+"J01AA02",
+"Tetracyclines"
+],
+"enoxacin": [
+"Watch",
+"J01MA04",
+"Fluoroquinolones"
+],
+"epicillin": [
+"Access",
+"J01CA07",
+"Penicillins "
+],
+"eravacycline": [
+"Reserve",
+"J01AA13",
+"Tetracyclines"
+],
+"ertapenem": [
+"Watch",
+"J01DH03",
+"Carbapenems"
+],
+"erythromycin": [
+"Watch",
+"J01FA01",
+"Macrolides"
+],
+"faropenem": [
+"Reserve",
+"J01DI03",
+"Penems"
+],
+"fidaxomicin": [
+"Watch",
+"A07AA12",
+"Macrolides"
+],
+"fleroxacin": [
+"Watch",
+"J01MA08",
+"Fluoroquinolones"
+],
+"flomoxef": [
+"Watch",
+"J01DC14",
+"Second-generation-cephalosporins"
+],
+"flucloxacillin": [
+"Access",
+"J01CF05",
+"Penicillins "
+],
+"flumequine": [
+"Watch",
+"J01MB07",
+"Quinolones"
+],
+"flurithromycin": [
+"Watch",
+"J01FA14",
+"Macrolides"
+],
+"fosfomycin_iv": [
+"Reserve",
+"J01XX01",
+"Phosphonics"
+],
+"fosfomycin_oral": [
+"Watch",
+"J01XX01",
+"Phosphonics"
+],
+"furazidin": [
+"Access",
+"J01XE03",
+"Nitrofuran derivatives"
+],
+"fusidic-acid": [
+"Watch",
+"J01XC01",
+"Steroid antibacterials"
+],
+"garenoxacin": [
+"Watch",
+"J01MA19",
+"Fluoroquinolones"
+],
+"gatifloxacin": [
+"Watch",
+"J01MA16",
+"Fluoroquinolones"
+],
+"gemifloxacin": [
+"Watch",
+"J01MA15",
+"Fluoroquinolones"
+],
+"gentamicin": [
+"Access",
+"J01GB03",
+"Aminoglycosides"
+],
+"grepafloxacin": [
+"Watch",
+"J01MA11",
+"Fluoroquinolones"
+],
+"hetacillin": [
+"Access",
+"J01CA18",
+"Penicillins "
+],
+"iclaprim": [
+"Reserve",
+"J01EA03",
+"Trimethoprim-derivatives"
+],
+"imipenem/cilastatin": [
+"Watch",
+"J01DH51",
+"Carbapenems"
+],
+"imipenem/cilastatin/relebactam": [
+"Reserve",
+"J01DH56",
+"Carbapenems"
+],
+"isepamicin": [
+"Watch",
+"J01GB11",
+"Aminoglycosides"
+],
+"josamycin": [
+"Watch",
+"J01FA07",
+"Macrolides"
+],
+"kanamycin_iv": [
+"Watch",
+"J01GB04",
+"Aminoglycosides"
+],
+"kanamycin_oral": [
+"Watch",
+"A07AA08",
+"Aminoglycosides"
+],
+"lascufloxacin": [
+"Watch",
+"J01MA25",
+"Fluoroquinolones"
+],
+"latamoxef": [
+"Watch",
+"J01DD06",
+"Third-generation-cephalosporins"
+],
+"lefamulin": [
+"Reserve",
+"J01XX12",
+"Pleuromutilin"
+],
+"levofloxacin": [
+"Watch",
+"J01MA12",
+"Fluoroquinolones"
+],
+"levonadifloxacin": [
+"Watch",
+"J01MA24",
+"Fluoroquinolones"
+],
+"lincomycin": [
+"Watch",
+"J01FF02",
+"Lincosamides"
+],
+"linezolid": [
+"Reserve",
+"J01XX08",
+"Oxazolidinones"
+],
+"lomefloxacin": [
+"Watch",
+"J01MA07",
+"Fluoroquinolones"
+],
+"loracarbef": [
+"Watch",
+"J01DC08",
+"Second-generation-cephalosporins"
+],
+"lymecycline": [
+"Watch",
+"J01AA04",
+"Tetracyclines"
+],
+"mecillinam": [
+"Access",
+"J01CA11",
+"Penicillins "
+],
+"meropenem": [
+"Watch",
+"J01DH02",
+"Carbapenems"
+],
+"meropenem/vaborbactam": [
+"Reserve",
+"J01DH52",
+"Carbapenems"
+],
+"metacycline": [
+"Watch",
+"J01AA05",
+"Tetracyclines"
+],
+"metampicillin": [
+"Access",
+"J01CA14",
+"Penicillins "
+],
+"meticillin": [
+"Access",
+"J01CF03",
+"Penicillins "
+],
+"metronidazole_iv": [
+"Access",
+"J01XD01",
+"Imidazoles"
+],
+"metronidazole_oral": [
+"Access",
+"P01AB01",
+"Imidazoles"
+],
+"mezlocillin": [
+"Watch",
+"J01CA10",
+"Penicillins "
+],
+"micronomicin": [
+"Watch",
+"to be assigned",
+"Aminoglycosides"
+],
+"midecamycin": [
+"Watch",
+"J01FA03",
+"Macrolides"
+],
+"minocycline_iv": [
+"Reserve",
+"J01AA08",
+"Tetracyclines"
+],
+"minocycline_oral": [
+"Watch",
+"J01AA08",
+"Tetracyclines"
+],
+"miocamycin": [
+"Watch",
+"J01FA11",
+"Macrolides"
+],
+"moxifloxacin": [
+"Watch",
+"J01MA14",
+"Fluoroquinolones"
+],
+"nafcillin": [
+"Access",
+"J01CF06",
+"Penicillins "
+],
+"nemonoxacin": [
+"Watch",
+"J01MB08",
+"Quinolones"
+],
+"neomycin_iv": [
+"Watch",
+"J01GB05",
+"Aminoglycosides"
+],
+"neomycin_oral": [
+"Watch",
+"A07AA01",
+"Aminoglycosides"
+],
+"netilmicin": [
+"Watch",
+"J01GB07",
+"Aminoglycosides"
+],
+"nifurtoinol": [
+"Access",
+"J01XE02",
+"Nitrofuran derivatives"
+],
+"nitrofurantoin": [
+"Access",
+"J01XE01",
+"Nitrofuran-derivatives"
+],
+"norfloxacin": [
+"Watch",
+"J01MA06",
+"Fluoroquinolones"
+],
+"ofloxacin": [
+"Watch",
+"J01MA01",
+"Fluoroquinolones"
+],
+"oleandomycin": [
+"Watch",
+"J01FA05",
+"Macrolides"
+],
+"omadacycline": [
+"Reserve",
+"J01AA15",
+"Tetracyclines"
+],
+"oritavancin": [
+"Reserve",
+"J01XA05",
+"Glycopeptides"
+],
+"ornidazole_iv": [
+"Access",
+"J01XD03",
+"Imidazoles"
+],
+"ornidazole_oral": [
+"Access",
+"P01AB03",
+"Imidazoles"
+],
+"oxacillin": [
+"Access",
+"J01CF04",
+"Penicillins "
+],
+"oxolinic-acid": [
+"Watch",
+"J01MB05",
+"Quinolones"
+],
+"oxytetracycline": [
+"Watch",
+"J01AA06",
+"Tetracyclines"
+],
+"panipenem": [
+"Watch",
+"J01DH55",
+"Carbapenems"
+],
+"pazufloxacin": [
+"Watch",
+"J01MA18",
+"Fluoroquinolones"
+],
+"pefloxacin": [
+"Watch",
+"J01MA03",
+"Fluoroquinolones"
+],
+"penamecillin": [
+"Access",
+"J01CE06",
+"Penicillins "
+],
+"penimepicycline": [
+"Watch",
+"J01AA10",
+"Tetracyclines"
+],
+"pheneticillin": [
+"Watch",
+"J01CE05",
+"Penicillins "
+],
+"phenoxymethylpenicillin": [
+"Access",
+"J01CE02",
+"Penicillins"
+],
+"pipemidic-acid": [
+"Watch",
+"J01MB04",
+"Quinolones"
+],
+"piperacillin": [
+"Watch",
+"J01CA12",
+"Penicillins "
+],
+"piperacillin/tazobactam": [
+"Watch",
+"J01CR05",
+"Beta-lactam/beta-lactamase-inhibitor_anti-pseudomonal"
+],
+"piromidic-acid": [
+"Watch",
+"J01MB03",
+"Quinolones"
+],
+"pivampicillin": [
+"Access",
+"J01CA02",
+"Penicillins "
+],
+"pivmecillinam": [
+"Access",
+"J01CA08",
+"Penicillins "
+],
+"plazomicin": [
+"Reserve",
+"J01GB14",
+"Aminoglycosides"
+],
+"polymyxin-b_iv": [
+"Reserve",
+"J01XB02",
+"Polymyxins"
+],
+"polymyxin-b_oral": [
+"Reserve",
+"A07AA05",
+"Polymyxins"
+],
+"pristinamycin": [
+"Watch",
+"J01FG01",
+"Streptogramins"
+],
+"procaine-benzylpenicillin": [
+"Access",
+"J01CE09",
+"Penicillins"
+],
+"propicillin": [
+"Access",
+"J01CE03",
+"Penicillins "
+],
+"prulifloxacin": [
+"Watch",
+"J01MA17",
+"Fluoroquinolones"
+],
+"ribostamycin": [
+"Watch",
+"J01GB10",
+"Aminoglycosides"
+],
+"rifabutin": [
+"Watch",
+"J04AB04",
+"Rifamycins"
+],
+"rifampicin": [
+"Watch",
+"J04AB02",
+"Rifamycins"
+],
+"rifamycin_iv": [
+"Watch",
+"J04AB03",
+"Rifamycins"
+],
+"rifamycin_oral": [
+"Watch",
+"A07AA13",
+"Rifamycins"
+],
+"rifaximin": [
+"Watch",
+"A07AA11",
+"Rifamycins"
+],
+"rokitamycin": [
+"Watch",
+"J01FA12",
+"Macrolides"
+],
+"rolitetracycline": [
+"Watch",
+"J01AA09",
+"Tetracyclines"
+],
+"rosoxacin": [
+"Watch",
+"J01MB01",
+"Quinolones"
+],
+"roxithromycin": [
+"Watch",
+"J01FA06",
+"Macrolides"
+],
+"rufloxacin": [
+"Watch",
+"J01MA10",
+"Fluoroquinolones"
+],
+"sarecycline": [
+"Watch",
+"J01AA14",
+"Tetracyclines"
+],
+"secnidazole": [
+"Access",
+"P01AB07",
+"Imidazoles"
+],
+"sisomicin": [
+"Watch",
+"J01GB08",
+"Aminoglycosides"
+],
+"sitafloxacin": [
+"Watch",
+"J01MA21",
+"Fluoroquinolones"
+],
+"solithromycin": [
+"Watch",
+"J01FA16",
+"Macrolides"
+],
+"sparfloxacin": [
+"Watch",
+"J01MA09",
+"Fluoroquinolones"
+],
+"spectinomycin": [
+"Access",
+"J01XX04",
+"Aminocyclitols"
+],
+"spiramycin": [
+"Watch",
+"J01FA02",
+"Macrolides"
+],
+"streptoduocin": [
+"Watch",
+"J01GA02",
+"Aminoglycosides"
+],
+"streptomycin_iv": [
+"Watch",
+"J01GA01",
+"Aminoglycosides"
+],
+"streptomycin_oral": [
+"Watch",
+"A07AA04",
+"Aminoglycosides"
+],
+"sulbactam": [
+"Access",
+"J01CG01",
+"Beta-lactamase-inhibitors"
+],
+"sulbenicillin": [
+"Watch",
+"J01CA16",
+"Penicillins "
+],
+"sulfadiazine": [
+"Access",
+"J01EC02",
+"Sulfonamides"
+],
+"sulfadiazine/tetroxoprim": [
+"Access",
+"J01EE06",
+"Sulfonamide-trimethoprim-combinations"
+],
+"sulfadiazine/trimethoprim": [
+"Access",
+"J01EE02",
+"Sulfonamide-trimethoprim-combinations"
+],
+"sulfadimethoxine": [
+"Access",
+"J01ED01",
+"Sulfonamides"
+],
+"sulfadimidine": [
+"Access",
+"J01EB03",
+"Sulfonamides"
+],
+"sulfadimidine/trimethoprim": [
+"Access",
+"J01EE05",
+"Sulfonamide-trimethoprim-combinations"
+],
+"sulfafurazole": [
+"Access",
+"J01EB05",
+"Sulfonamides "
+],
+"sulfaisodimidine": [
+"Access",
+"J01EB01",
+"Sulfonamides"
+],
+"sulfalene": [
+"Access",
+"J01ED02",
+"Sulfonamides"
+],
+"sulfamazone": [
+"Access",
+"J01ED09",
+"Sulfonamides"
+],
+"sulfamerazine": [
+"Access",
+"J01ED07",
+"Sulfonamides"
+],
+"sulfamerazine/trimethoprim": [
+"Access",
+"J01EE07",
+"Sulfonamide-trimethoprim-combinations"
+],
+"sulfamethizole": [
+"Access",
+"J01EB02",
+"Sulfonamides"
+],
+"sulfamethoxazole": [
+"Access",
+"J01EC01",
+"Sulfonamides"
+],
+"sulfamethoxazole/trimethoprim": [
+"Access",
+"J01EE01",
+"Sulfonamide-trimethoprim-combinations"
+],
+"sulfamethoxypyridazine": [
+"Access",
+"J01ED05",
+"Sulfonamides"
+],
+"sulfametomidine": [
+"Access",
+"J01ED03",
+"Sulfonamides"
+],
+"sulfametoxydiazine": [
+"Access",
+"J01ED04",
+"Sulfonamides"
+],
+"sulfametrole/trimethoprim": [
+"Access",
+"J01EE03",
+"Sulfonamide-trimethoprim-combinations"
+],
+"sulfamoxole": [
+"Access",
+"J01EC03",
+"Sulfonamides"
+],
+"sulfamoxole/trimethoprim": [
+"Access",
+"J01EE04",
+"Sulfonamide-trimethoprim-combinations"
+],
+"sulfanilamide": [
+"Access",
+"J01EB06",
+"Sulfonamides"
+],
+"sulfaperin": [
+"Access",
+"J01ED06",
+"Sulfonamides"
+],
+"sulfaphenazole": [
+"Access",
+"J01ED08",
+"Sulfonamides"
+],
+"sulfapyridine": [
+"Access",
+"J01EB04",
+"Sulfonamides"
+],
+"sulfathiazole": [
+"Access",
+"J01EB07",
+"Sulfonamides"
+],
+"sulfathiourea": [
+"Access",
+"J01EB08",
+"Sulfonamides"
+],
+"sultamicillin": [
+"Access",
+"J01CR04",
+"Beta-lactam/beta-lactamase-inhibitor"
+],
+"talampicillin": [
+"Access",
+"J01CA15",
+"Penicillins "
+],
+"tazobactam": [
+"Watch",
+"J01CG02",
+"Beta-lactamase-inhibitors"
+],
+"tebipenem": [
+"Watch",
+"J01DH06",
+"Carbapenems"
+],
+"tedizolid": [
+"Reserve",
+"J01XX11",
+"Oxazolidinones"
+],
+"teicoplanin": [
+"Watch",
+"J01XA02",
+"Glycopeptides"
+],
+"telavancin": [
+"Reserve",
+"J01XA03",
+"Glycopeptides"
+],
+"telithromycin": [
+"Watch",
+"J01FA15",
+"Macrolides"
+],
+"temafloxacin": [
+"Watch",
+"J01MA05",
+"Fluoroquinolones"
+],
+"temocillin": [
+"Watch",
+"J01CA17",
+"Penicillins"
+],
+"tetracycline": [
+"Access",
+"J01AA07",
+"Tetracyclines"
+],
+"thiamphenicol": [
+"Access",
+"J01BA02",
+"Amphenicols"
+],
+"ticarcillin": [
+"Watch",
+"J01CA13",
+"Penicillins"
+],
+"tigecycline": [
+"Reserve",
+"J01AA12",
+"Glycylcyclines"
+],
+"tinidazole_iv": [
+"Access",
+"J01XD02",
+"Imidazoles"
+],
+"tinidazole_oral": [
+"Access",
+"P01AB02",
+"Imidazoles"
+],
+"tobramycin": [
+"Watch",
+"J01GB01",
+"Aminoglycosides"
+],
+"tosufloxacin": [
+"Watch",
+"J01MA22",
+"Fluoroquinolones"
+],
+"trimethoprim": [
+"Access",
+"J01EA01",
+"Trimethoprim-derivatives"
+],
+"troleandomycin": [
+"Watch",
+"J01FA08",
+"Macrolides"
+],
+"trovafloxacin": [
+"Watch",
+"J01MA13",
+"Fluoroquinolones"
+],
+"vancomycin_iv": [
+"Watch",
+"J01XA01",
+"Glycopeptides"
+],
+"vancomycin_oral": [
+"Watch",
+"A07AA09",
+"Glycopeptides"
+]
+}

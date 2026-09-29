@@ -1,0 +1,70 @@
+{
+ "month": "EPD_202506",
+ "source": "NHSBSA English Prescribing Dataset (OGL v3.0), BNF 5.1 antibacterial drugs",
+ "who_table": "WHO AWaRe classification 2023 (WHO-MHP-HPS-EML-2023.04, CC BY-NC-SA 3.0 IGO)",
+ "elapsed_sec": 8.6,
+ "items_total": 2264718,
+ "orgs_total": 7916,
+ "chemicals": 67,
+ "items_by_category": {
+  "Access": 1842090,
+  "Watch": 359328,
+  "Unclassified": 60632,
+  "Reserve": 2668
+ },
+ "coverage_pct": 97.3,
+ "access_pct_of_classified": 83.6,
+ "watch_pct_of_classified": 16.3,
+ "reserve_pct_of_classified": 0.12,
+ "practices_ge_min": 6114,
+ "min_items": 100,
+ "practice_access_share": {
+  "min": 38.5,
+  "p10": 77.8,
+  "median": 83.6,
+  "p90": 88.8,
+  "max": 99.1
+ },
+ "practices_below_70pct_access": 40,
+ "top20_wr": {
+  "cutoff_pct": 20.0,
+  "n": 1245,
+  "share_of_all_wr_items_pct": 25.6
+ },
+ "icb_access_range_pct": [
+  80.0,
+  88.2
+ ],
+ "histogram_access_share_5pt": {
+  "35-40": 1,
+  "40-45": 2,
+  "45-50": 1,
+  "50-55": 2,
+  "55-60": 4,
+  "60-65": 3,
+  "65-70": 27,
+  "70-75": 169,
+  "75-80": 996,
+  "80-85": 2693,
+  "85-90": 1858,
+  "90-95": 337,
+  "95-100": 21
+ },
+ "example_mirror_p95_practice": {
+  "total_items": 389,
+  "wr_items": 88,
+  "wr_share_pct": 24.2,
+  "icb_peer_median_pct": 18.4,
+  "icb_percentile": 94,
+  "icb_peers": 160
+ },
+ "unclassified_chemicals": [
+  "Clofazimine",
+  "Dapsone",
+  "Ethambutol hydrochloride",
+  "Isoniazid",
+  "Methenamine hippurate",
+  "Nitazoxanide",
+  "Pyrazinamide"
+ ]
+}

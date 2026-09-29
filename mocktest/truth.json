@@ -1,0 +1,362 @@
+[
+ {
+  "id": "mock-01",
+  "font": "Bradley Hand Bold.ttf",
+  "date": "02/08/26",
+  "prescriber_name": "Dr. Iyer",
+  "reg_no": "WBMC 76270",
+  "drug_line": "Cefixime 200 mg",
+  "qty": "5 cap"
+ },
+ {
+  "id": "mock-02",
+  "font": "Noteworthy.ttc",
+  "date": "11/09/26",
+  "prescriber_name": "Dr. Roy",
+  "reg_no": "WBMC 70204",
+  "drug_line": "Taxim-O 200",
+  "qty": "5 cap"
+ },
+ {
+  "id": "mock-03",
+  "font": "ChalkboardSE.ttc",
+  "date": "09/09/26",
+  "prescriber_name": "Dr. Das",
+  "reg_no": "TCMC 54809",
+  "drug_line": "Clavam 625",
+  "qty": "10 tab"
+ },
+ {
+  "id": "mock-04",
+  "font": "MarkerFelt.ttc",
+  "date": "16/09/26",
+  "prescriber_name": "Dr. Sen",
+  "reg_no": "TCMC 61544",
+  "drug_line": "Amoxycillin 500 mg",
+  "qty": "5 cap"
+ },
+ {
+  "id": "mock-05",
+  "font": "SnellRoundhand.ttc",
+  "date": "07/08/26",
+  "prescriber_name": "Dr. Nair",
+  "reg_no": "WBMC 33561",
+  "drug_line": "Azithromycin 500 mg",
+  "qty": "5 cap"
+ },
+ {
+  "id": "mock-06",
+  "font": "Bradley Hand Bold.ttf",
+  "date": "21/08/26",
+  "prescriber_name": "Dr. Kurian",
+  "reg_no": "WBMC 63429",
+  "drug_line": "Cefixime 200 + Ofloxacin 200",
+  "qty": "3 tab"
+ },
+ {
+  "id": "mock-07",
+  "font": "Noteworthy.ttc",
+  "date": "28/08/26",
+  "prescriber_name": "Dr. Ghosh",
+  "reg_no": "TCMC 49945",
+  "drug_line": "Ofloxacin 200 + Ornidazole 500",
+  "qty": "14 cap"
+ },
+ {
+  "id": "mock-08",
+  "font": "ChalkboardSE.ttc",
+  "date": "02/09/26",
+  "prescriber_name": "Dr. Banerjee",
+  "reg_no": "WBMC 22733",
+  "drug_line": "Cefpodoxime 200 mg",
+  "qty": "10 tab"
+ },
+ {
+  "id": "mock-09",
+  "font": "MarkerFelt.ttc",
+  "date": "15/09/26",
+  "prescriber_name": "Dr. Roy",
+  "reg_no": "TCMC 52004",
+  "drug_line": "Wymox 500",
+  "qty": "15 cap"
+ },
+ {
+  "id": "mock-10",
+  "font": "SnellRoundhand.ttc",
+  "date": "07/08/26",
+  "prescriber_name": "Dr. Nair",
+  "reg_no": "WBMC 94988",
+  "drug_line": "Linezolid 600 mg",
+  "qty": "14 cap"
+ },
+ {
+  "id": "mock-11",
+  "font": "Bradley Hand Bold.ttf",
+  "date": "15/08/26",
+  "prescriber_name": "Dr. Iyer",
+  "reg_no": "WBMC 74846",
+  "drug_line": "Doxycycline 100 mg",
+  "qty": "5 cap"
+ },
+ {
+  "id": "mock-12",
+  "font": "Noteworthy.ttc",
+  "date": "24/08/26",
+  "prescriber_name": "Dr. Roy",
+  "reg_no": "WBMC 90705",
+  "drug_line": "Ciprofloxacin 500 mg",
+  "qty": "3 tab"
+ },
+ {
+  "id": "mock-13",
+  "font": "ChalkboardSE.ttc",
+  "date": "01/08/26",
+  "prescriber_name": "Dr. Pillai",
+  "reg_no": "WBMC 47248",
+  "drug_line": "Monocef-O 200",
+  "qty": "6 tab"
+ },
+ {
+  "id": "mock-14",
+  "font": "MarkerFelt.ttc",
+  "date": "23/09/26",
+  "prescriber_name": "Dr. Roy",
+  "reg_no": "TCMC 36458",
+  "drug_line": "Levofloxacin 500 mg",
+  "qty": "6 tab"
+ },
+ {
+  "id": "mock-15",
+  "font": "SnellRoundhand.ttc",
+  "date": "27/09/26",
+  "prescriber_name": "Dr. Sen",
+  "reg_no": "TCMC 52780",
+  "drug_line": "Cefuroxime 500 mg",
+  "qty": "7 tab"
+ },
+ {
+  "id": "mock-16",
+  "font": "Bradley Hand Bold.ttf",
+  "date": "11/09/26",
+  "prescriber_name": "Dr. Sen",
+  "reg_no": "WBMC 73767",
+  "drug_line": "Amoxycillin 500 + Clavulanate 125",
+  "qty": "7 tab"
+ },
+ {
+  "id": "mock-17",
+  "font": "Noteworthy.ttc",
+  "date": "10/08/26",
+  "prescriber_name": "Dr. Sen",
+  "reg_no": "WBMC 41498",
+  "drug_line": "Clavam 625",
+  "qty": "5 cap"
+ },
+ {
+  "id": "mock-18",
+  "font": "ChalkboardSE.ttc",
+  "date": "10/08/26",
+  "prescriber_name": "Dr. Menon",
+  "reg_no": "TCMC 32345",
+  "drug_line": "Doxycycline 100 mg",
+  "qty": "14 cap"
+ },
+ {
+  "id": "mock-19",
+  "font": "MarkerFelt.ttc",
+  "date": "16/08/26",
+  "prescriber_name": "Dr. Pillai",
+  "reg_no": "WBMC 47408",
+  "drug_line": "Cefpodoxime 200 mg",
+  "qty": "7 tab"
+ },
+ {
+  "id": "mock-20",
+  "font": "SnellRoundhand.ttc",
+  "date": "12/09/26",
+  "prescriber_name": "Dr. Sen",
+  "reg_no": "TCMC 13109",
+  "drug_line": "Levofloxacin 500 mg",
+  "qty": "15 cap"
+ },
+ {
+  "id": "mock-21",
+  "font": "Bradley Hand Bold.ttf",
+  "date": "07/08/26",
+  "prescriber_name": "Dr. Pillai",
+  "reg_no": "TCMC 38443",
+  "drug_line": "Cefuroxime 500 mg",
+  "qty": "10 tab"
+ },
+ {
+  "id": "mock-22",
+  "font": "Noteworthy.ttc",
+  "date": "08/09/26",
+  "prescriber_name": "Dr. Das",
+  "reg_no": "TCMC 59449",
+  "drug_line": "Doxycycline 100 mg",
+  "qty": "5 cap"
+ },
+ {
+  "id": "mock-23",
+  "font": "ChalkboardSE.ttc",
+  "date": "16/09/26",
+  "prescriber_name": "Dr. Sen",
+  "reg_no": "WBMC 26830",
+  "drug_line": "Amoxycillin 500 mg",
+  "qty": "6 tab"
+ },
+ {
+  "id": "mock-24",
+  "font": "MarkerFelt.ttc",
+  "date": "24/09/26",
+  "prescriber_name": "Dr. Iyer",
+  "reg_no": "TCMC 99553",
+  "drug_line": "Linezolid 600 mg",
+  "qty": "14 cap"
+ },
+ {
+  "id": "mock-25",
+  "font": "SnellRoundhand.ttc",
+  "date": "20/08/26",
+  "prescriber_name": "Dr. Kurian",
+  "reg_no": "TCMC 20793",
+  "drug_line": "Clavam 625",
+  "qty": "3 tab"
+ },
+ {
+  "id": "mock-26",
+  "font": "Bradley Hand Bold.ttf",
+  "date": "23/08/26",
+  "prescriber_name": "Dr. Menon",
+  "reg_no": "TCMC 84682",
+  "drug_line": "Levofloxacin 500 mg",
+  "qty": "15 cap"
+ },
+ {
+  "id": "mock-27",
+  "font": "Noteworthy.ttc",
+  "date": "02/08/26",
+  "prescriber_name": "Dr. Sen",
+  "reg_no": "TCMC 51368",
+  "drug_line": "Amoxycillin 500 + Clavulanate 125",
+  "qty": "6 tab"
+ },
+ {
+  "id": "mock-28",
+  "font": "ChalkboardSE.ttc",
+  "date": "09/09/26",
+  "prescriber_name": "Dr. Ghosh",
+  "reg_no": "TCMC 44173",
+  "drug_line": "Clavam 625",
+  "qty": "1 strip"
+ },
+ {
+  "id": "mock-29",
+  "font": "MarkerFelt.ttc",
+  "date": "10/09/26",
+  "prescriber_name": "Dr. Pillai",
+  "reg_no": "WBMC 87978",
+  "drug_line": "Clavam 625",
+  "qty": "5 cap"
+ },
+ {
+  "id": "mock-30",
+  "font": "SnellRoundhand.ttc",
+  "date": "07/08/26",
+  "prescriber_name": "Dr. Banerjee",
+  "reg_no": "TCMC 99771",
+  "drug_line": "Ciprofloxacin 500 mg",
+  "qty": "5 cap"
+ },
+ {
+  "id": "mock-31",
+  "font": "Bradley Hand Bold.ttf",
+  "date": "15/08/26",
+  "prescriber_name": "Dr. Varghese",
+  "reg_no": "WBMC 89356",
+  "drug_line": "Cefixime 200 mg",
+  "qty": "1 strip"
+ },
+ {
+  "id": "mock-32",
+  "font": "Noteworthy.ttc",
+  "date": "16/08/26",
+  "prescriber_name": "Dr. Menon",
+  "reg_no": "TCMC 58690",
+  "drug_line": "Monocef-O 200",
+  "qty": "5 cap"
+ },
+ {
+  "id": "mock-33",
+  "font": "ChalkboardSE.ttc",
+  "date": "22/09/26",
+  "prescriber_name": "Dr. Varghese",
+  "reg_no": "TCMC 37165",
+  "drug_line": "Monocef-O 200",
+  "qty": "3 tab"
+ },
+ {
+  "id": "mock-34",
+  "font": "MarkerFelt.ttc",
+  "date": "08/09/26",
+  "prescriber_name": "Dr. Banerjee",
+  "reg_no": "WBMC 97316",
+  "drug_line": "Ofloxacin 200 + Ornidazole 500",
+  "qty": "10 tab"
+ },
+ {
+  "id": "mock-35",
+  "font": "SnellRoundhand.ttc",
+  "date": "22/08/26",
+  "prescriber_name": "Dr. Banerjee",
+  "reg_no": "WBMC 99737",
+  "drug_line": "Linezolid 600 mg",
+  "qty": "10 tab"
+ },
+ {
+  "id": "mock-36",
+  "font": "Bradley Hand Bold.ttf",
+  "date": "22/08/26",
+  "prescriber_name": "Dr. Varghese",
+  "reg_no": "TCMC 48873",
+  "drug_line": "Taxim-O 200",
+  "qty": "5 cap"
+ },
+ {
+  "id": "mock-37",
+  "font": "Noteworthy.ttc",
+  "date": "24/08/26",
+  "prescriber_name": "Dr. Das",
+  "reg_no": "WBMC 74037",
+  "drug_line": "Linezolid 600 mg",
+  "qty": "14 cap"
+ },
+ {
+  "id": "mock-38",
+  "font": "ChalkboardSE.ttc",
+  "date": "10/09/26",
+  "prescriber_name": "Dr. Pillai",
+  "reg_no": "TCMC 14707",
+  "drug_line": "Azithromycin 500 mg",
+  "qty": "1 strip"
+ },
+ {
+  "id": "mock-39",
+  "font": "MarkerFelt.ttc",
+  "date": "02/09/26",
+  "prescriber_name": "Dr. Roy",
+  "reg_no": "WBMC 82402",
+  "drug_line": "Ciprofloxacin 500 mg",
+  "qty": "3 tab"
+ },
+ {
+  "id": "mock-40",
+  "font": "SnellRoundhand.ttc",
+  "date": "02/09/26",
+  "prescriber_name": "Dr. Pillai",
+  "reg_no": "TCMC 70642",
+  "drug_line": "Cefpodoxime 200 mg",
+  "qty": "7 tab"
+ }
+]

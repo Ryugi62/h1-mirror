@@ -1,0 +1,16 @@
+{
+ "_source": "Gautham M et al. Antibiotics (Basel) 2022;11(4):523, Table 4 — brand name -> active ingredient as listed (tablets and syrups, two West Bengal districts). Snapshot: evidence/gautham-2022-wb-informal-providers-2026-09-26.txt. In production every new brand is added once from the composition printed on the pack and confirmed by the chemist.",
+ "brands": {
+  "Taxim-O": "cefixime",
+  "Sefbactum": "cefixime",
+  "Noxcef-O": "cefixime",
+  "Zofix": "cefixime",
+  "Cefix": "cefixime",
+  "Clavam": "amoxicillin + clavulanic acid",
+  "Medimox Plus": "amoxicillin + clavulanic acid",
+  "Wymox": "amoxicillin",
+  "Moxileb": "amoxicillin",
+  "Moxilium": "amoxicillin",
+  "Monocef-O": "cefpodoxime proxetil"
+ }
+}
