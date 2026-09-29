@@ -36,7 +36,9 @@ def run_month(rows: list, rules: RuleTable, month: str, min_lines: int = 20, min
         if r.prescriber_reg not in council_register:
             return False
         listed = council_register[r.prescriber_reg] if isinstance(council_register, dict) else ""
-        return not (listed and r.prescriber_name) or same_name(listed, r.prescriber_name)
+        if not listed:                                     # list without names: number check only
+            return True
+        return bool(r.prescriber_name) and same_name(listed, r.prescriber_name)   # fail closed
 
     def eligible(r):
         return bool(r.prescriber_reg) and r.source in LETTER_SOURCES and on_council(r)

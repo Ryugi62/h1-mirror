@@ -104,3 +104,13 @@ def test_misread_into_another_valid_number_is_caught_by_name_match():
     swapped = [r._replace(prescriber_name="Dr. C. Roy") for r in _rows("R1", "GP", "P3", 0, 20)]  # R1 misread
     rep = run_month(good + swapped, RT, "2026-08", council_register=council)
     assert rep.letters["R1"].lines == 20 and rep.unmatched_reg_lines == 20
+
+
+def test_name_check_fails_closed_when_the_line_has_no_name():
+    """When the council list has a name for the number, a line with no written name never counts (v0.8.1)."""
+    council = {"R1": "Dr. A. Das", "R2": "Dr. B. Sen"}
+    named = [r._replace(prescriber_name="A Das") for r in _rows("R1", "GP", "P1", 16, 4)]
+    named += [r._replace(prescriber_name="B Sen") for r in _rows("R2", "GP", "P2", 12, 8)]
+    unnamed = _rows("R2", "GP", "P3", 10, 10)                                   # no name written
+    rep = run_month(named + unnamed, RT, "2026-08", council_register=council)
+    assert rep.letters["R2"].lines == 20 and rep.unmatched_reg_lines == 20
