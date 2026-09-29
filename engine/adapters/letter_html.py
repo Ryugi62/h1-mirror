@@ -48,7 +48,7 @@ def letter_html(letter) -> str:
     return f"""<article class="h1m-letter" style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 max-width:620px;border:1px solid #d1d5db;border-radius:14px;padding:22px 24px;background:#fff;color:#111827;line-height:1.45">
 <div style="font-size:12px;letter-spacing:.06em;color:#047857;font-weight:700">H1 MIRROR · MONTHLY ANTIBIOTIC FEEDBACK · {escape(letter.month)}</div>
-<div style="font-size:13px;color:#4b5563;margin-top:2px">Private to Reg. No. <b>{escape(letter.prescriber_reg)}</b> · {escape(letter.specialty)} · {letter.lines} antibiotic lines from local chemists</div>
+<div style="font-size:13px;color:#4b5563;margin-top:2px">Private to Reg. No. <b>{escape(letter.prescriber_reg)}</b> · {escape(letter.specialty)} · {letter.lines} antibiotic lines on complete bill exports</div>
 <div style="font-size:26px;font-weight:800;color:{tone};margin:14px 0 2px">Your Watch + Reserve share: {pct(letter.wr_share)}</div>
 <div style="font-size:14px;color:#374151">Same-specialty peers ({letter.peers}): median {pct(letter.peer_median)} · you: {ordinal(letter.percentile)} percentile</div>
 <div aria-hidden="true" style="position:relative;height:14px;background:#ecfdf5;border-radius:7px;margin:12px 0 4px">
@@ -61,7 +61,7 @@ max-width:620px;border:1px solid #d1d5db;border-radius:14px;padding:22px 24px;ba
  <div style="flex:1;min-width:220px"><b>WHO "not recommended" combinations you prescribed</b><ul style="margin:4px 0 0 18px;padding:0">{nr}</ul></div>
  <div style="flex:1;min-width:220px"><b>Your most frequent Watch / Reserve lines</b><ul style="margin:4px 0 0 18px;padding:0">{wr}</ul></div>
 </div>
-<p style="font-size:12px;color:#6b7280;margin:14px 0 0">A pattern, not a verdict: Watch antibiotics are right for some patients. Built from Schedule H1 register rows and bills your local chemists already keep; no patient names, no per-pharmacy report. Only you receive this letter. Classification: WHO AWaRe 2023 + WHO list of not-recommended combinations.</p>
+<p style="font-size:12px;color:#6b7280;margin:14px 0 0">A pattern, not a verdict: Watch antibiotics are right for some patients. Counted from complete bill exports of your local chemists (every antibiotic line, not the H1 register alone), matched to your council registration number; no patient names, no per-pharmacy report. Delivered only to you; the district sees aggregates only. Classification: WHO AWaRe 2023 + WHO list of not-recommended combinations.</p>
 </article>"""
 
 

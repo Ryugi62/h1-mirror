@@ -6,28 +6,39 @@ from collections import Counter, namedtuple
 
 from domain.aware import Line, RuleTable, district_view, prescriber_mirrors
 
-# One row as a chemist records it (Schedule H1 register or bill export). Patient fields never enter the engine.
-RegisterRow = namedtuple("RegisterRow", "date pharmacy prescriber_reg specialty drug_line qty")
+# One row as a chemist records it. Patient fields never enter the engine. source: "bill" = complete billing-software
+# export (every antibiotic line, the fair denominator) | "h1_photo" = photographed H1 register row (mostly Watch drugs).
+RegisterRow = namedtuple("RegisterRow", "date pharmacy prescriber_reg specialty drug_line qty source", defaults=("bill",))
+LETTER_SOURCES = ("bill",)
 
 Letter = namedtuple("Letter", "prescriber_reg specialty month lines access_share wr_share peer_median percentile "
                               "peers above_median not_recommended top_watch_reserve")
 
 MonthReport = namedtuple("MonthReport", "month letters district lines_total unclassified_lines unclassified_labels "
-                                        "unregistered_lines")
+                                        "unregistered_lines photo_lines unmatched_reg_lines")
 
 WR = ("Watch", "Reserve")
 
 
-def run_month(rows: list, rules: RuleTable, month: str, min_lines: int = 20, min_pharmacies: int = 10) -> MonthReport:
-    """Classify every row with the one rule table, then build letters (registered prescribers with >= min_lines,
-    ranked only against the same specialty) and the district view (None below min_pharmacies)."""
+def run_month(rows: list, rules: RuleTable, month: str, min_lines: int = 20, min_pharmacies: int = 10,
+              council_register: set = None) -> MonthReport:
+    """Classify every row with the one rule table, then build letters and the district view (None below
+    min_pharmacies). A line counts towards a letter only if it comes from a complete bill export and its
+    registration number is on the council register (when one is given); every other line feeds the aggregate only.
+    Letters: >= min_lines eligible lines, ranked only against the same specialty."""
     verdicts = [rules.classify_label(r.drug_line) for r in rows]
-    lines = [Line(r.prescriber_reg or None, r.specialty, r.pharmacy, v) for r, v in zip(rows, verdicts)]
+
+    def eligible(r):
+        return bool(r.prescriber_reg) and r.source in LETTER_SOURCES and (
+            council_register is None or r.prescriber_reg in council_register)
+
+    elig = [eligible(r) for r in rows]
+    lines = [Line(r.prescriber_reg if e else None, r.specialty, r.pharmacy, v) for r, v, e in zip(rows, verdicts, elig)]
     mirrors = prescriber_mirrors(lines, min_lines=min_lines)
 
     per_reg_nr, per_reg_wr = {}, {}
-    for r, v in zip(rows, verdicts):
-        if not r.prescriber_reg:
+    for r, v, e in zip(rows, verdicts, elig):
+        if not e:
             continue
         if v == "Not recommended":
             per_reg_nr.setdefault(r.prescriber_reg, Counter())[_tidy(r.drug_line)] += 1
@@ -47,7 +58,10 @@ def run_month(rows: list, rules: RuleTable, month: str, min_lines: int = 20, min
     return MonthReport(
         month=month, letters=letters, district=district_view(lines, min_pharmacies=min_pharmacies),
         lines_total=len(rows), unclassified_lines=sum(unclassified.values()),
-        unclassified_labels=unclassified.most_common(), unregistered_lines=sum(1 for r in rows if not r.prescriber_reg))
+        unclassified_labels=unclassified.most_common(), unregistered_lines=sum(1 for r in rows if not r.prescriber_reg),
+        photo_lines=sum(1 for r in rows if r.source not in LETTER_SOURCES),
+        unmatched_reg_lines=sum(1 for r in rows if r.prescriber_reg and council_register is not None
+                                and r.prescriber_reg not in council_register))
 
 
 def classify_lines(labels: list, rules: RuleTable) -> list:

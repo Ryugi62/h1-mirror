@@ -10,13 +10,15 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.join(HERE, "..", "..")
 
 
-def test_cli_writes_one_letter_per_registered_prescriber():
+def test_cli_writes_one_letter_per_eligible_prescriber():
     with tempfile.TemporaryDirectory() as out:
         subprocess.run([sys.executable, os.path.join(REPO, "engine", "cli.py"),
-                        os.path.join(REPO, "examples", "register-sample.csv"), "--out", out], check=True,
+                        os.path.join(REPO, "examples", "register-sample.csv"), "--out", out,
+                        "--council", os.path.join(REPO, "examples", "council-register-sample.txt")], check=True,
                        capture_output=True)
-        assert len(os.listdir(os.path.join(out, "letters"))) == 30
-        assert json.load(open(os.path.join(out, "district.json")))["district"]["pharmacies"] == 12
+        summary = json.load(open(os.path.join(out, "district.json")))
+        assert len(os.listdir(os.path.join(out, "letters"))) == summary["letters"] > 0
+        assert summary["district"]["pharmacies"] == 12 and summary["unmatched_reg_lines"] > 0
 
 
 def test_mock_register_reading_scores_reproduce():

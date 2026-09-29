@@ -62,7 +62,7 @@ Zifi 200 Tablet</textarea>
 
   <section class="card" aria-labelledby="s2">
     <h2 id="s2">2 · One month of lines → private letters + district view</h2>
-    <p class="hint">Load the <b>synthetic</b> sample month (12 pharmacies, 30 registered prescribers, lines from unregistered providers) or your own CSV with columns <code>date, pharmacy, prescriber_reg, specialty, drug_line, qty</code>. Letters go only to registered prescribers with ≥20 lines, ranked only against the same specialty; the district sees aggregates only when ≥10 pharmacies contribute.</p>
+    <p class="hint">Load the <b>synthetic</b> sample month (12 pharmacies: 10 export complete bills, 2 only photograph their handwritten H1 register; 30 registered prescribers; unregistered providers; a few misread registration numbers) or your own CSV with columns <code>date, pharmacy, prescriber_reg, specialty, drug_line, qty[, source]</code>. <b>What the number means:</b> Watch + Reserve share = Watch + Reserve lines ÷ all WHO-classified antibiotic lines of one prescriber, counted <b>only from complete bill exports</b> (the H1 register alone holds mostly Watch drugs, so photo rows feed the district aggregate only). A letter needs ≥20 such lines and a registration number found on the council list; peers = same specialty. The district sees aggregates only when ≥10 pharmacies contribute.</p>
     <div class="row">
       <button id="btn-sample" disabled>Run the sample month</button>
       <label class="btn secondary" for="file" id="lbl-file">Upload a CSV</label>
@@ -121,11 +121,12 @@ def register_js(csv_text, pharmacy, month):
 def pharmacies_js(csv_text):
     return json.dumps(sorted({r.pharmacy for r in register_csv.parse(csv_text)}))
 
-def month_js(csv_text, month):
-    rep = run_month(register_csv.parse(csv_text), RT, month)
+def month_js(csv_text, month, council_text):
+    council = set(council_text.split()) if council_text.strip() else None
+    rep = run_month(register_csv.parse(csv_text), RT, month, council_register=council)
     letters = sorted(rep.letters.values(), key=lambda l: -l.wr_share)
     return json.dumps({"lines": rep.lines_total, "unregistered": rep.unregistered_lines,
-        "unclassified": rep.unclassified_lines, "unclassified_labels": rep.unclassified_labels,
+        "unclassified": rep.unclassified_lines, "photo": rep.photo_lines, "unmatched": rep.unmatched_reg_lines, "unclassified_labels": rep.unclassified_labels,
         "district": rep.district, "district_html": district_html(rep.district),
         "letters": [{"reg": l.prescriber_reg, "specialty": l.specialty, "wr": l.wr_share, "pctl": l.percentile,
                      "nr": sum(n for _, n in l.not_recommended), "html": letter_html(l)} for l in letters]})
@@ -146,7 +147,7 @@ function classify() {
   }</tbody></table>`;
 }
 
-let lastCsv = "";
+let lastCsv = "", councilText = "";
 function showRegister() {
   $("register").innerHTML = py.globals.get("register_js")(lastCsv, $("pharm").value, "2026-08");
 }
@@ -159,7 +160,7 @@ function fillPharmacies() {
 function runMonth(csvText, label) {
   lastCsv = csvText;
   try {
-    report = JSON.parse(py.globals.get("month_js")(csvText, "2026-08"));
+    report = JSON.parse(py.globals.get("month_js")(csvText, "2026-08", councilText));
   } catch (e) { $("month").innerHTML = `<p class="err">${esc(String(e.message).split("\n").filter(Boolean).pop())}</p>`; return; }
   const d = report.district;
   const unk = report.unclassified_labels.slice(0, 3).map(([l, n]) => `${esc(l)} ×${n}`).join(", ");
@@ -167,10 +168,12 @@ function runMonth(csvText, label) {
     <p class="hint" style="margin-top:14px">${esc(label)}</p>
     <div class="stats">
       <div class="stat"><b>${report.lines.toLocaleString()}</b><span>antibiotic lines</span></div>
-      <div class="stat"><b>${report.letters.length}</b><span>private letters (registered, ≥20 lines)</span></div>
+      <div class="stat"><b>${report.letters.length}</b><span>private letters (council-matched, ≥20 bill lines)</span></div>
       <div class="stat"><b>${d ? pct(d.access_share) : "—"}</b><span>district Access share${d ? ` (${d.pharmacies} pharmacies)` : " (withheld: &lt;10 pharmacies)"}</span></div>
       <div class="stat"><b>${d ? d.not_recommended_lines : "—"}</b><span>lines of WHO not-recommended combinations</span></div>
       <div class="stat"><b>${report.unregistered}</b><span>unregistered lines → aggregate only, never a letter</span></div>
+      <div class="stat"><b>${report.photo}</b><span>H1-register photo lines → aggregate only (no fair denominator)</span></div>
+      <div class="stat"><b>${report.unmatched}</b><span>lines with a reg. no. not on the council list → no letter, chemist re-checks</span></div>
       <div class="stat"><b>${report.unclassified}</b><span>unclassified → map once${unk ? `: ${unk}` : ""}</span></div>
     </div>
     <div class="row">
@@ -192,10 +195,12 @@ $("btn-print").addEventListener("click", () => {
 
 $("btn-classify").addEventListener("click", classify);
 $("btn-sample").addEventListener("click", async () => {
-  const r = await fetch("examples/register-sample.csv"); runMonth(await r.text(), "Synthetic sample month (examples/register-sample.csv).");
+  const r = await fetch("examples/register-sample.csv");
+  const c = await fetch("examples/council-register-sample.txt"); councilText = c.ok ? await c.text() : "";
+  runMonth(await r.text(), "Synthetic sample month (examples/register-sample.csv), checked against examples/council-register-sample.txt.");
 });
 $("file").addEventListener("change", async (ev) => {
-  const f = ev.target.files[0]; if (!f || !py) return; runMonth(await f.text(), `Your file: ${f.name} (processed in this browser only).`);
+  const f = ev.target.files[0]; if (!f || !py) return; councilText = ""; runMonth(await f.text(), `Your file: ${f.name} (processed in this browser only; no council list applied).`);
 });
 boot();
 </script>

@@ -36,14 +36,28 @@ England run is an engine check only; any effect in India has to be measured in I
 
 ```bash
 python3 -m pip install pytest          # the engine itself is standard-library Python 3.9+
-python3 -m pytest -q engine/tests      # 24 tests
-python3 engine/cli.py examples/register-sample.csv --out out/   # 30 letters in out/letters/, district view in out/district.json
+python3 -m pytest -q engine/tests      # 26 tests
+python3 engine/cli.py examples/register-sample.csv --council examples/council-register-sample.txt --out out/   # letters in out/letters/, district view in out/district.json
 python3 mocktest/score_mock.py mocktest/truth.json mocktest/predictions-haiku-2026-09-26.jsonl /tmp/mock.json
 python3 engine/run_evidence.py EPD_202506   # national check (downloads aggregates from the NHSBSA open-data API)
 ```
 
-Your own month: a CSV with `date, pharmacy, prescriber_reg, specialty, drug_line, qty`. Patient columns, if present, are
-ignored. An empty `prescriber_reg` is an unregistered provider: counted in the district aggregate, never sent a letter.
+Your own month: a CSV with `date, pharmacy, prescriber_reg, specialty, drug_line, qty[, source]`. Patient columns, if
+present, are ignored. An empty `prescriber_reg` is an unregistered provider: counted in the district aggregate, never
+sent a letter.
+
+## What the number means (the metric)
+
+- **Watch + Reserve share** of one prescriber = Watch + Reserve lines ÷ all WHO-classified antibiotic lines
+  (Access + Watch + Reserve), counted **only from complete bill exports** (`source=bill`: every antibiotic line the
+  billing software records, with the prescriber's registration number). The H1 register alone holds mostly Watch drugs,
+  so photographed register rows (`source=h1_photo`) feed the district aggregate only, never a letter.
+- A letter needs ≥20 such lines in the month and a registration number that is **on the council register list**
+  (`--council`): a misread number never sends a letter to the wrong doctor. Specialty comes from the council register,
+  not from the number.
+- Peers = same specialty. Lines from unregistered providers and chemist-initiated sales without a prescription go to
+  the district aggregate (≥10 pharmacies) only.
+- Trial primary outcome: this share (lines); DDD-based share is secondary.
 
 ## Results so far
 
@@ -51,8 +65,8 @@ ignored. An empty `prescriber_reg` is an unregistered provider: counted in the d
 |---|---|
 | Indian label lines → verdict (brands via Gautham et al. 2022) | Taxim-O 200 → Watch · Clavam 625 → Access · Cefixime + Ofloxacin → WHO not recommended · Linezolid → Reserve |
 | National-scale engine check (NHSBSA EPD, June 2025) | 2,264,718 items, 7,916 organisations, 97.3% classified, Access 83.6% of classified |
-| Blind mock-register reading (40 rows, 5 handwriting fonts) | AWaRe verdict 40/40 · drug line + strength 40/40 · registration digits 35/40 · quantity 34/40 |
-| Synthetic sample month (12 pharmacies) | 1,764 lines · 30 letters · district Access 63.9% · 57 not-recommended lines · 1 unknown brand flagged to map |
+| Blind mock-register reading (40 synthetic rows, closed vocabulary of 16 drug lines, 5 handwriting-style fonts; Wilson 95% CI) | AWaRe verdict 40/40 (91–100%) · drug line + strength 40/40 · registration digits 35/40 (74–95%) · full reg. no. 31/40 (62–88%) · quantity 34/40 (71–93%) · **all fields right 27/40 (52–80%)**. Not real handwriting: real anonymised pages come next. |
+| Synthetic sample month (12 pharmacies, 2 photo-only) | 1,466 lines · 22 letters · 143 photo lines and 11 misread-number lines kept out of letters · district Access 56.8% · 68 not-recommended lines · 1 unknown brand flagged to map |
 
 ## Design rules
 

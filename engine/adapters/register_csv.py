@@ -1,13 +1,15 @@
 """Adapter: a pharmacy's month of antibiotic lines as CSV (billing-software export or confirmed register rows).
 
-Columns: date, pharmacy, prescriber_reg, specialty, drug_line, qty. Patient columns, if present, are ignored and
-never reach the engine. An empty prescriber_reg = unregistered prescriber (district aggregate only, never a letter)."""
+Columns: date, pharmacy, prescriber_reg, specialty, drug_line, qty [, source]. source = "bill" (default: complete
+billing-software export) or "h1_photo" (photographed H1 register row; aggregate only). Patient columns, if present, are
+ignored and never reach the engine. An empty prescriber_reg = unregistered prescriber (district aggregate only, never a letter)."""
 import csv
 import io
 
 from application.monthly_mirror import RegisterRow
 
 COLUMNS = ("date", "pharmacy", "prescriber_reg", "specialty", "drug_line", "qty")
+OPTIONAL = ("source",)
 
 
 def parse(text: str) -> list:
@@ -19,14 +21,15 @@ def parse(text: str) -> list:
     for rec in reader:
         if not (rec.get("drug_line") or "").strip():
             continue
-        rows.append(RegisterRow(*((rec.get(c) or "").strip() for c in COLUMNS)))
+        source = (rec.get("source") or "").strip() or "bill"
+        rows.append(RegisterRow(*((rec.get(c) or "").strip() for c in COLUMNS), source=source))
     return rows
 
 
 def dump(rows: list) -> str:
     out = io.StringIO()
     w = csv.writer(out, lineterminator="\n")
-    w.writerow(COLUMNS)
+    w.writerow(COLUMNS + OPTIONAL)
     for r in rows:
-        w.writerow([getattr(r, c) for c in COLUMNS])
+        w.writerow([getattr(r, c) for c in COLUMNS + OPTIONAL])
     return out.getvalue()

@@ -58,10 +58,18 @@ open English Prescribing Dataset (EPD), because India has no open prescription-l
   (`pharmacy_register`, 1 test).
 - Success: 24 tests pass.
 
+### v0.5 — fair denominator + no wrong-doctor letters (2026-09-30, from three mock-judge reviews)
+- **Source**: each line is `bill` (complete billing-software export) or `h1_photo` (photographed H1 register row). Only `bill`
+  lines count towards a letter; `h1_photo` lines feed the district aggregate (the register alone holds mostly Watch drugs).
+- **Council register**: when a list of valid registration numbers is given, lines whose number is not on it never count
+  towards a letter (a misread digit must not reach the wrong doctor); they are reported as `unmatched_reg_lines`.
+- Given R3 with 25 photo-only lines, Then no letter and R3 is not a peer. Given a misread "R2X", Then no letter, 20 unmatched lines.
+- Success: 2 more tests (26).
+
 ## Non-goals
 Clinical appropriateness per patient (needs diagnosis); DDD-based metrics (EPD items only); handwriting extraction (Final Round).
 
 ## Layout
 `domain/` pure rules (no I/O) ← `application/` (use cases; `run_evidence.py` for the national check) ← `adapters/`
 (NHSBSA HTTP, register CSV, rule files, letter HTML) ← `cli.py` / `index.html` (infrastructure).
-Tests: `python3 -m pytest -q engine/tests` (24 = v0.1 4 + v0.2 5 + v0.3 5 + v0.4 10).
+Tests: `python3 -m pytest -q engine/tests` (26 = v0.1 4 + v0.2 5 + v0.3 5 + v0.4 10 + v0.5 2).

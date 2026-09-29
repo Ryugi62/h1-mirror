@@ -53,12 +53,14 @@ def test_csv_adapter_round_trip_and_rejects_missing_columns():
 
 def test_sample_month_gives_letters_district_view_and_flags_unknown_brand():
     rows = register_csv.parse(open(SAMPLE, encoding="utf-8").read())
-    rep = run_month(rows, RT, "2026-08")
-    assert rep.lines_total == len(rows) and len(rep.letters) == 30            # every registered prescriber >= 20 lines
+    council = set(open(SAMPLE.replace("register-sample.csv", "council-register-sample.txt")).read().split())
+    rep = run_month(rows, RT, "2026-08", council_register=council)
+    assert rep.lines_total == len(rows) and 15 <= len(rep.letters) < 30     # some prescribers lack 20 bill lines
+    assert set(rep.letters) <= council                                       # misread numbers never get a letter
+    assert rep.photo_lines > 0 and rep.unmatched_reg_lines > 0
     assert {lt.specialty for lt in rep.letters.values()} == {"General practice", "Paediatrics", "ENT"}
     assert rep.district is not None and rep.district["pharmacies"] == 12
     assert ("Zifi 200 Tablet" in dict(rep.unclassified_labels))              # chemist maps a new brand once
-    assert all(lt.peers >= 5 for lt in rep.letters.values())
 
 
 def test_classify_lines_for_the_demo_box():
@@ -75,3 +77,20 @@ def test_chemist_gets_own_printable_register_only():
     assert [e.prescriber for e in reg].count("unregistered") == 1
     html = register_html("P1", "2026-08", reg)
     assert "P1" in html and "R2" not in html and html.count("<tr>") == 5   # header + 4 lines, no other pharmacy
+
+
+def test_letters_use_only_complete_bill_exports_not_h1_photo_rows():
+    """The H1 register alone holds mostly Watch drugs, so photo-only rows cannot give a fair denominator:
+    they feed the district aggregate only, never a letter (v0.5)."""
+    bill = _rows("R1", "GP", "P1", 16, 4) + _rows("R2", "GP", "P2", 12, 8)
+    photo = [r._replace(source="h1_photo") for r in _rows("R3", "GP", "P3", 0, 25)]
+    rep = run_month(bill + photo, RT, "2026-08")
+    assert set(rep.letters) == {"R1", "R2"} and rep.photo_lines == 25
+    assert rep.letters["R2"].peers == 2                               # photo-only prescriber is not a peer either
+
+
+def test_registration_numbers_must_match_the_council_list_before_any_letter():
+    """A misread registration number must never send a letter to the wrong doctor (v0.5)."""
+    rows = _rows("R1", "GP", "P1", 16, 4) + _rows("R2", "GP", "P2", 12, 8) + _rows("R2X", "GP", "P3", 10, 10)
+    rep = run_month(rows, RT, "2026-08", council_register={"R1", "R2"})
+    assert set(rep.letters) == {"R1", "R2"} and rep.unmatched_reg_lines == 20
