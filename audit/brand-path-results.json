@@ -1,0 +1,32 @@
+{
+ "in_table": {
+  "n": 200,
+  "correct": 194,
+  "wilson95": [
+   93.6,
+   98.6
+  ],
+  "resolved": 194,
+  "correct_when_resolved": 194,
+  "wilson95_when_resolved": [
+   98.1,
+   100.0
+  ],
+  "wrong": []
+ },
+ "held_out": {
+  "n": 200,
+  "correct": 20,
+  "wilson95": [
+   6.6,
+   14.9
+  ],
+  "resolved": 20,
+  "correct_when_resolved": 20,
+  "wilson95_when_resolved": [
+   83.9,
+   100.0
+  ],
+  "wrong": []
+ }
+}

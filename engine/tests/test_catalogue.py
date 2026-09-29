@@ -59,3 +59,10 @@ def test_blind_reader_audit_on_200_real_indian_products_reproduces():
     subprocess.run([sys.executable, os.path.join(repo, "audit", "score_audit.py")], check=True, capture_output=True)
     res = json.load(open(os.path.join(repo, "audit", "results.json")))
     assert res["n"] == 200 and res["agree"] == 200
+
+
+def test_brand_name_path_audit_never_mislabels():
+    repo = os.path.join(HERE, "..", "..")
+    res = json.load(open(os.path.join(repo, "audit", "brand-path-results.json")))
+    assert res["in_table"]["correct"] == 194 and res["in_table"]["wrong"] == []
+    assert res["held_out"]["wrong"] == []                      # unseen brands are flagged, never guessed
