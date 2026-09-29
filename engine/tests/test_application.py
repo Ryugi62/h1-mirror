@@ -94,3 +94,13 @@ def test_registration_numbers_must_match_the_council_list_before_any_letter():
     rows = _rows("R1", "GP", "P1", 16, 4) + _rows("R2", "GP", "P2", 12, 8) + _rows("R2X", "GP", "P3", 10, 10)
     rep = run_month(rows, RT, "2026-08", council_register={"R1", "R2"})
     assert set(rep.letters) == {"R1", "R2"} and rep.unmatched_reg_lines == 20
+
+
+def test_misread_into_another_valid_number_is_caught_by_name_match():
+    """Council list maps number -> name; a line whose written prescriber name does not match never counts (v0.8)."""
+    council = {"R1": "Dr. A. Das", "R2": "Dr. B. Sen"}
+    good = [r._replace(prescriber_name="A Das") for r in _rows("R1", "GP", "P1", 16, 4)]
+    good += [r._replace(prescriber_name="Dr B. Sen") for r in _rows("R2", "GP", "P2", 12, 8)]
+    swapped = [r._replace(prescriber_name="Dr. C. Roy") for r in _rows("R1", "GP", "P3", 0, 20)]  # R1 misread
+    rep = run_month(good + swapped, RT, "2026-08", council_register=council)
+    assert rep.letters["R1"].lines == 20 and rep.unmatched_reg_lines == 20

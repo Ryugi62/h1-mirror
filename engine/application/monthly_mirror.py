@@ -2,13 +2,15 @@
 
 Pure orchestration of the domain rules (no files, no network, no framework). The same module runs in the CLI
 (`engine/cli.py`) and, unchanged, in the browser demo (`index.html`, via Pyodide)."""
+import re
 from collections import Counter, namedtuple
 
 from domain.aware import Line, RuleTable, district_view, prescriber_mirrors
 
 # One row as a chemist records it. Patient fields never enter the engine. source: "bill" = complete billing-software
 # export (every antibiotic line, the fair denominator) | "h1_photo" = photographed H1 register row (mostly Watch drugs).
-RegisterRow = namedtuple("RegisterRow", "date pharmacy prescriber_reg specialty drug_line qty source", defaults=("bill",))
+RegisterRow = namedtuple("RegisterRow", "date pharmacy prescriber_reg specialty drug_line qty source prescriber_name",
+                         defaults=("bill", ""))
 LETTER_SOURCES = ("bill",)
 
 Letter = namedtuple("Letter", "prescriber_reg specialty month lines access_share wr_share peer_median percentile "
@@ -28,9 +30,16 @@ def run_month(rows: list, rules: RuleTable, month: str, min_lines: int = 20, min
     Letters: >= min_lines eligible lines, ranked only against the same specialty."""
     verdicts = [rules.classify_label(r.drug_line) for r in rows]
 
+    def on_council(r):
+        if council_register is None:
+            return True
+        if r.prescriber_reg not in council_register:
+            return False
+        listed = council_register[r.prescriber_reg] if isinstance(council_register, dict) else ""
+        return not (listed and r.prescriber_name) or same_name(listed, r.prescriber_name)
+
     def eligible(r):
-        return bool(r.prescriber_reg) and r.source in LETTER_SOURCES and (
-            council_register is None or r.prescriber_reg in council_register)
+        return bool(r.prescriber_reg) and r.source in LETTER_SOURCES and on_council(r)
 
     elig = [eligible(r) for r in rows]
     lines = [Line(r.prescriber_reg if e else None, r.specialty, r.pharmacy, v) for r, v, e in zip(rows, verdicts, elig)]
@@ -60,8 +69,17 @@ def run_month(rows: list, rules: RuleTable, month: str, min_lines: int = 20, min
         lines_total=len(rows), unclassified_lines=sum(unclassified.values()),
         unclassified_labels=unclassified.most_common(), unregistered_lines=sum(1 for r in rows if not r.prescriber_reg),
         photo_lines=sum(1 for r in rows if r.source not in LETTER_SOURCES),
-        unmatched_reg_lines=sum(1 for r in rows if r.prescriber_reg and council_register is not None
-                                and r.prescriber_reg not in council_register))
+        unmatched_reg_lines=sum(1 for r in rows if r.prescriber_reg and not on_council(r)))
+
+
+def same_name(a: str, b: str) -> bool:
+    """Council name vs name written on the bill: same surname and, when both give one, the same first initial."""
+    def parts(x):
+        return [w for w in re.sub(r"[^a-z ]", " ", x.lower()).split() if w not in ("dr", "mr", "mrs", "ms")]
+    pa, pb = parts(a), parts(b)
+    if not pa or not pb or pa[-1] != pb[-1]:
+        return False
+    return len(pa) < 2 or len(pb) < 2 or pa[0][0] == pb[0][0]
 
 
 def classify_lines(labels: list, rules: RuleTable) -> list:

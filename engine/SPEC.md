@@ -82,10 +82,15 @@ open English Prescribing Dataset (EPD), because India has no open prescription-l
 - Audit: 200 random catalogue products labelled by an independent blind reader from the written rules: 200/200 agree.
 - Success: 5 more tests (36).
 
+### v0.8 — name + number council match (2026-09-30)
+- The council list may map number → registered name. A line counts towards a letter only if its number is listed and,
+  when both names are known, the written prescriber name matches (same surname, same first initial if both have one).
+  A misread into another valid doctor's number is caught. Success: 1 more test (38).
+
 ## Non-goals
 Clinical appropriateness per patient (needs diagnosis); DDD-based metrics (EPD items only); handwriting extraction (Final Round).
 
 ## Layout
 `domain/` pure rules (no I/O) ← `application/` (use cases; `run_evidence.py` for the national check) ← `adapters/`
 (NHSBSA HTTP, register CSV, rule files, letter HTML) ← `cli.py` / `index.html` (infrastructure).
-Tests: `python3 -m pytest -q engine/tests` (36 = v0.1 4 + v0.2 5 + v0.3 5 + v0.4 10 + v0.5 2 + v0.6 5 + v0.7 5).
+Tests: `python3 -m pytest -q engine/tests` (38 = v0.1 4 + v0.2 5 + v0.3 5 + v0.4 10 + v0.5 2 + v0.6 5 + v0.7 6 + v0.8 1).

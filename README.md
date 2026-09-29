@@ -37,7 +37,7 @@ England run is an engine check only; any effect in India has to be measured in I
 
 ```bash
 python3 -m pip install pytest          # the engine itself is standard-library Python 3.9+
-python3 -m pytest -q engine/tests      # 36 tests
+python3 -m pytest -q engine/tests      # 38 tests
 python3 engine/cli.py examples/register-sample.csv --council examples/council-register-sample.txt --out out/   # letters in out/letters/, district view in out/district.json
 python3 mocktest/score_mock.py mocktest/truth.json mocktest/predictions-haiku-2026-09-26.jsonl /tmp/mock.json
 python3 engine/run_india_catalogue.py      # Indian catalogue check + national brand table (downloads the MIT catalogue, verifies sha256)
@@ -55,7 +55,8 @@ sent a letter.
   billing software records, with the prescriber's registration number). The H1 register alone holds mostly Watch drugs,
   so photographed register rows (`source=h1_photo`) feed the district aggregate only, never a letter.
 - A letter needs ≥20 such lines in the month and a registration number that is **on the council register list**
-  (`--council`): a misread number never sends a letter to the wrong doctor. Specialty comes from the council register,
+  (`--council`) and, when the list gives the registered name, a **matching prescriber name** on the line: a misread
+  number, even one that belongs to another doctor, never sends a letter to the wrong person. Specialty comes from the council register,
   not from the number.
 - Peers = same specialty. Lines from unregistered providers and chemist-initiated sales without a prescription go to
   the district aggregate (≥10 pharmacies) only.

@@ -9,7 +9,7 @@ import io
 from application.monthly_mirror import RegisterRow
 
 COLUMNS = ("date", "pharmacy", "prescriber_reg", "specialty", "drug_line", "qty")
-OPTIONAL = ("source",)
+OPTIONAL = ("source", "prescriber_name")
 
 
 def parse(text: str) -> list:
@@ -22,7 +22,8 @@ def parse(text: str) -> list:
         if not (rec.get("drug_line") or "").strip():
             continue
         source = (rec.get("source") or "").strip() or "bill"
-        rows.append(RegisterRow(*((rec.get(c) or "").strip() for c in COLUMNS), source=source))
+        rows.append(RegisterRow(*((rec.get(c) or "").strip() for c in COLUMNS), source=source,
+                                prescriber_name=(rec.get("prescriber_name") or "").strip()))
     return rows
 
 
